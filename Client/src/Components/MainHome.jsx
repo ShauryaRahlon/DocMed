@@ -90,11 +90,11 @@ function MainHome() {
         <div className="header-container">
           <a href="/" className="logo">
             <img
-              src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="/public/Logo-icon.webp"
               alt="DocPulse Logo"
               className="logo-image"
             />
-            <h1 className="logo-text">DocPulse</h1>
+            <h1 className="logo-text">DocMed</h1>
           </a>
           <nav className="header-nav">
             <a href="/" className="nav-link Home">
