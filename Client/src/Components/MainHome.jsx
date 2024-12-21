@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../Styling/MainHome.css';
 // import '../Styling/Card.css'
 import Card from './Card.jsx';
+import { Link } from 'react-router-dom';
+import Login from '../Pages/Login.jsx';
 
 
 function MainHome() {
@@ -74,14 +76,17 @@ function MainHome() {
             </div>
 
             <div>
-              <button className="login-button">Login</button>
+              {/* <button className="login-button">Login</Link></button> */}
+              <Link to="/login" className="login-button">
+                Login
+              </Link>
             </div>
           </div>
-        </div>
-      </nav>
+        </div >
+      </nav >
 
       {/* Header */}
-      <header className="header">
+      < header className="header" >
         <div className="header-container">
           <a href="/" className="logo">
             <img
@@ -100,14 +105,14 @@ function MainHome() {
             </a>
           </nav>
         </div>
-      </header>
+      </header >
 
       {/* Main Section */}
-      <main className="main">
+      < main className="main" >
         <div className="main-content">
           <h2 className="main-title">ONLINE DOCTOR APPOINTMENT APP</h2>
         </div>
-      </main>
+      </main >
 
       <main className='main2'>
         <div className='image-container'>
@@ -116,9 +121,9 @@ function MainHome() {
           <img className='features-image' src="https://docpulse.com/wp-content/uploads/2020/01/meet-my-doctor-1-1024x441.png" alt="Features Image" />
         </div>
       </main>
-      
+
       <Card />
-</>
+    </>
   );
 }
 

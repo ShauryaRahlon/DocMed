@@ -10,19 +10,18 @@ function App() {
   return (
     <>
       <Router>
-        <div>
-          <MainHome />
-          {/* <Navbar /> */}
+        {/* <div> */}
+        {/* <MainHome /> */}
 
-          <Routes>
+        <Routes>
 
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+          <Route path="/" element={<MainHome />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
 
-          <Footer />
-        </div>
+        <Footer />
+        {/* </div> */}
       </Router>
     </>
   )
