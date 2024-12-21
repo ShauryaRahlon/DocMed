@@ -5,6 +5,8 @@ import Login from "./Pages/Login.jsx";
 import Home from "./Pages/Home.jsx";
 import MainHome from './Components/MainHome.jsx'
 import Footer from "./Footer/Footer.jsx";
+import Signup from "./Pages/Signup.jsx";
+import DoctorListing from "./Pages/DoctorListing.jsx";
 function App() {
 
   return (
@@ -18,6 +20,9 @@ function App() {
           <Route path="/" element={<MainHome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/doctorlisting" element={<DoctorListing />} />
+
         </Routes>
 
         <Footer />

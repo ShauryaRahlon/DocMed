@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    phone: "",
+    userName: "",
+    phoneNumber: "",
   });
+  const [message, setMessage] = useState("");
+
+  const navigate = useNavigate(); // Hook to programmatically navigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,24 +18,38 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
 
-      if (response.ok) {
-        const data = await response.json();
-        alert("Login successful: " + JSON.stringify(data));
+    console.log(formData);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/Login",
+        formData
+      );
+
+      console.log(response);
+
+      if (response.status === 201) {
+        console.log("Navigating to doctorslisting page")
+        setMessage("Login successful!");
+        navigate("/doctorlisting"); // Navigate to '/doctorlisting' upon success
       } else {
-        alert("Error logging in. Please try again.");
+        setMessage(
+          "Error: " + (response.data.message || "Login failed. Try again.")
+        );
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Please check your connection.");
+      console.error("Login Error:", error);
+      if (error.response) {
+        setMessage(
+          "Error: " +
+            (error.response.data.message || "Login failed. Try again.")
+        );
+      } else if (error.request) {
+        setMessage("No response from server. Please try again later.");
+      } else {
+        setMessage("An error occurred. Please check your connection.");
+      }
     }
   };
 
@@ -42,8 +61,8 @@ const Login = () => {
           <label>Username:</label>
           <input
             type="text"
-            name="username"
-            value={formData.username}
+            name="userName"
+            value={formData.userName}
             onChange={handleChange}
             required
             style={{ width: "100%", padding: "8px" }}
@@ -53,8 +72,8 @@ const Login = () => {
           <label>Phone Number:</label>
           <input
             type="tel"
-            name="phone"
-            value={formData.phone}
+            name="phoneNumber"
+            value={formData.phoneNumber}
             onChange={handleChange}
             required
             style={{ width: "100%", padding: "8px" }}
@@ -64,6 +83,7 @@ const Login = () => {
           Submit
         </button>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };
