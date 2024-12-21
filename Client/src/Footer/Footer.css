@@ -4,6 +4,9 @@
   text-align: center; /* Center the text */
   padding: 10px 0; /* Add some vertical spacing */
   font-size: 14px; /* Font size for the text */
+  /* position: fixed; */
+  /* bottom: 1px; */
+  /* width: 100%; */
 }
 
 .footer a {

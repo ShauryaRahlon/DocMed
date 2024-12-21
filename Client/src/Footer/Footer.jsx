@@ -4,7 +4,7 @@ const Footer = () => {
   return (
    <>
     <footer class="footer">
-        <p>Copyright © Baby BOIS - All Rights Reserved | <a href="#">Privacy Policy</a></p>
+        <p>Copyright © DocMed - All Rights Reserved | <a href="#">Privacy Policy</a></p>
     </footer>
    </>
   )
