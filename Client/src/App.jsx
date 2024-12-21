@@ -7,6 +7,7 @@ import MainHome from './Components/MainHome.jsx'
 import Footer from "./Footer/Footer.jsx";
 import Signup from "./Pages/Signup.jsx";
 import DoctorListing from "./Pages/DoctorListing.jsx";
+import Review from "./Components/Review.jsx";
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/doctorlisting" element={<DoctorListing />} />
+          <Route path="/review" element={<Review />} />
 
         </Routes>
         <Footer />
