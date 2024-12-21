@@ -8,24 +8,24 @@ import AniAi from './AniAi.jsx';
 function Card() {
   const [cards] = useState([
     {
-      title: 'Card 1',
+      title: 'Book Appointment with Doctors Easily',
       content:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta perspiciatis aliquid, modi, quibusdam voluptatem iusto exercitationem porro facilis animi et dolorum ad.',
+        'DocMed enables patients to search for top doctors in the locality and book confirmed appointments.',
     },
     {
-      title: 'Card 2',
+      title: 'Consult Online with Doctor',
       content:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta perspiciatis aliquid, modi, quibusdam voluptatem iusto exercitationem porro facilis animi et dolorum ad.',
+        'Why take time off work to visit a doctor? Try our convenient video consultation service instead.',
     },
     {
-      title: 'Card 3',
+      title: 'Manage Your Health Records with The Best Doctor Appointment App',
       content:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta perspiciatis aliquid, modi, quibusdam voluptatem iusto exercitationem porro facilis animi et dolorum ad.',
+        'Book appointments, consult doctors, and manage prescriptions all in one place.',
     },
     {
-      title: 'Card 4',
+      title: 'CareGenie ',
       content:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque soluta perspiciatis aliquid, modi, quibusdam voluptatem iusto exercitationem porro facilis animi et dolorum ad.',
+        'Your personal health assistant, bringing expert care and convenience to your fingertips.',
     },
   ]);
 
@@ -60,8 +60,8 @@ function Card() {
                 </div>
               )}
                     <div>
-                        <h3>{card.title}</h3>
-                        <p>{card.content}</p>
+                        <h3 className='card-title'>{card.title}</h3>
+                        <p className='card-content'>{card.content}</p>
                         <button className='btn'>Book</button>
                     </div>
                   </div>
