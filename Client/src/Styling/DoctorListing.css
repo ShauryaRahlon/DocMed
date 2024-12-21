@@ -1,0 +1,195 @@
+body {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+.listing-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+}
+
+.check-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #9ca3af;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.doctor-card {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+        0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.image-container {
+    position: relative;
+}
+
+.doctor-image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.logo-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #1f2937;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #374151;
+}
+
+.practo-logo {
+    height: 1.5rem;
+}
+
+.info-container {
+    flex: 1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.doctor-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #60a5fa;
+}
+
+.specialization {
+    color: #d1d5db;
+}
+
+.experience {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    color: #34d399;
+}
+
+.clock-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+}
+
+.location-container {
+    margin-top: 0.5rem;
+}
+
+.location,
+.fee {
+    color: #d1d5db;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.ratings-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rating-badge {
+    background-color: #34d399;
+    color: #111827;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.patient-stories {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.patient-stories:hover {
+    color: #60a5fa;
+}
+
+.book-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #2563eb;
+}
+
+.no-fee {
+    font-size: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .doctor-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        align-self: center;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .book-button {
+        width: 100%;
+    }
+}

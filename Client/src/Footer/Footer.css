@@ -1,0 +1,16 @@
+.footer {
+  background-color: #34d399; /* Green background similar to the image */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 10px 0; /* Add some vertical spacing */
+  font-size: 14px; /* Font size for the text */
+}
+
+.footer a {
+  color: white; /* Make the link white */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Add underline on hover for better UX */
+}
