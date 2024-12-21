@@ -12,7 +12,7 @@ export const signUp = async(req,res) => {
         }
 
         const phone = await User.findOne({phoneNumber});
-        if (phoneNumber.length > 10){
+        if (phoneNumber.length > 10 || phoneNumber.length < 10){
             return res.status(400).json({error:"Phone number should be 10 digits long"})
         }
         if (phone) {
@@ -41,7 +41,7 @@ export const signUp = async(req,res) => {
     }
 };
 
-export const login = (req, res) => {
+export const login = async (req, res) => {
     const { userName, phoneNumber } = req.body;
 
     // Validate email and password
@@ -49,10 +49,16 @@ export const login = (req, res) => {
         return res.status(400).json({ message: 'Username and Phone Number are required.' });
     }
 
+    if (phoneNumber.length > 10 || phoneNumber.length < 10  ){
+        return res.status(400).json({error:"Phone number should be 10 digits long"})
+    }
+
     // Check credentials
-    if (userName === process.env.USER_NAME && phoneNumber === process.env.PHONE_NUMBER) {
-        //Send OTP on whatsapp using whatsapp-web.js and verify it
-        return res.status(200).json({ message: 'Login successful!' });
+
+    const checkUser = await User.findOne({ userName, phoneNumber });
+
+    if (checkUser) {
+        return res.status(201).json({ message: 'Login successful!' });
     } else {
         return res.status(401).json({ message: 'Invalid username or phone number.' });
     }

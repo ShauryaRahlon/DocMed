@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import connectDB from "./Utils/dbConnection.js";
+import cors from 'cors'
 
 dotenv.config();
 
@@ -17,6 +18,15 @@ connectDB();
 
 // Middleware to parse incoming JSON data
 app.use(express.json());
+
+//Setting up cors
+const corsOptions = {
+  origin:"http://localhost:5173",
+  methods:"GET, PUT",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 //importing routes
 import authRoutes from './Routes/auth.routes.js'
