@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer.jsx";
 import Signup from "./Pages/Signup.jsx";
 import DoctorListing from "./Pages/DoctorListing.jsx";
 import Review from "./Components/Review.jsx";
+import Map from "./Pages/Map.jsx";
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/doctorlisting" element={<DoctorListing />} />
           <Route path="/review" element={<Review />} />
+          <Route path="/map" element={<Map />} />
 
         </Routes>
         <Footer />
