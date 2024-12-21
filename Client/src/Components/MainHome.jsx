@@ -4,6 +4,7 @@ import '../Styling/MainHome.css';
 import Card from './Card.jsx';
 import { Link } from 'react-router-dom';
 import Login from '../Pages/Login.jsx';
+import Signup from '../Pages/Signup.jsx';
 
 
 function MainHome() {
@@ -79,6 +80,12 @@ function MainHome() {
               {/* <button className="login-button">Login</Link></button> */}
               <Link to="/login" className="login-button">
                 Login
+              </Link>
+            </div>
+            <div>
+              {/* <button className="login-button">Login</Link></button> */}
+              <Link to="/signup" className="login-button">
+                Signup
               </Link>
             </div>
           </div>
