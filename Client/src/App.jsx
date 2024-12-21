@@ -10,18 +10,12 @@ function App() {
   return (
     <>
       <Router>
-        {/* <div> */}
-        {/* <MainHome /> */}
-
         <Routes>
-
           <Route path="/" element={<MainHome />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-
         <Footer />
-        {/* </div> */}
       </Router>
     </>
   )
