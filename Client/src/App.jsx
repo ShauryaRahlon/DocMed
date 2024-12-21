@@ -10,21 +10,20 @@ function App() {
   return (
     <>
       <Router>
-      <div>
-        <MainHome />
-        {/* <Navbar /> */}
+        <div>
+          <MainHome />
+          {/* <Navbar /> */}
 
-        <Routes>
+          <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
 
-        </Routes>
-        
-        <Footer />
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
     </>
   )
 }

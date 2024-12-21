@@ -15,7 +15,7 @@ const DoctorCard = ({ doctor }) => {
                     />
                     <div className="logo-container">
                         <img
-                            src="/api/placeholder/80/24"
+                            src="https://as2.ftcdn.net/v2/jpg/09/87/58/25/1000_F_987582510_68UXWXPtFrFdQJSJbcuSPUyb5nF6Inw3.jpg"
                             alt="Practo Logo"
                             className="practo-logo"
                         />
@@ -80,7 +80,7 @@ const DoctorListing = () => {
             consultationFee: 650,
             rating: 99,
             patientStories: 114,
-            image: "/images/Doc1.webp"
+            image: "https://imgs.search.brave.com/1r_lNH1MoMfa0LnnfNlVq2dYfaoN_Kftaf0O6djlVII/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzQ1LzkyLzEx/LzM2MF9GXzI0NTky/MTE5NV84YnRNS001/VHFMVlVjeFZoY0pv/YnZJbjlIdEFPaFNU/Zy5qcGc"
         },
         {
             name: "Dr. Aishna Sharma",
@@ -91,7 +91,7 @@ const DoctorListing = () => {
             consultationFee: 500,
             rating: 98,
             patientStories: 10,
-            image: "/images/Doc2.webp"
+            image: "https://imgs.search.brave.com/PkUuwcduTgOAltXZNMI0ItfzkfVCWw0CKCVSJ6dmpN0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM2/NzUwNzIwOS9waG90/by9wb3J0cmFpdC1v/Zi1pbmRpYW4tZmVt/YWxlLWRvY3Rvci1z/dG9jay1waG90by5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/bUktTVBHQV9iSEJM/SzlENzd2OHNoWU9a/ZEk3UHFubGgyX3hK/RTAwdFVITT0"
         }
     ];
 
