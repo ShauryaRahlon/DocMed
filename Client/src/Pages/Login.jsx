@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import '../Styling/Login.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -54,36 +55,44 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
-      <h2>Login</h2>
+    <div className="main-container">
+    <div className='login-container'>
+      <div style={{display:"flex", gap:"15px", justifyItems:"center", alignItems:"center", margin:"10px 0 20px 10px"}}>
+        <img src="/public/Logo-icon.webp" alt="DocMed icon" style={{width:"60px", height: "60px", borderRadius:"50px"}} />
+        <h2 style={{fontSize:"30px", color:"white"}}>DocMed</h2>
+      </div>
+      <h2 className="login-heading">Login</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Username:</label>
+        <div className='username' style={{ marginBottom: "10px" }}>
+          <label htmlFor='username'>Username:</label>
           <input
             type="text"
             name="userName"
             value={formData.userName}
             onChange={handleChange}
             required
-            style={{ width: "100%", padding: "8px" }}
+            placeholder="Enter Username"
+            style={{ width: "100%", padding: "8px", borderRadius: "5px"}}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Phone Number:</label>
+        <div className='phonenumber' style={{ marginBottom: "10px" }}>
+          <label htmlFor='phone'>Phone Number:</label>
           <input
             type="tel"
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
             required
-            style={{ width: "100%", padding: "8px" }}
+            placeholder="Enter Phonenumber"
+            style={{ width: "100%", padding: "8px", borderRadius: "5px"}}
           />
         </div>
-        <button type="submit" style={{ padding: "10px 20px" }}>
+        <button className='submit-btn' type="submit" style={{ padding: "10px 20px" }}>
           Submit
         </button>
       </form>
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 };
