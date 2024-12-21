@@ -104,12 +104,12 @@ function MainHome() {
             <h1 className="logo-text">DocMed</h1>
           </a>
           <nav className="header-nav">
-            <a href="/" className="nav-link Home">
+            <Link to="/" className="nav-link Home">
               Home
-            </a>
-            <a href="/contact" className="nav-link ContactUs">
+            </Link>
+            <Link to="/contact" className="nav-link ContactUs">
               Contact Us
-            </a>
+            </Link>
           </nav>
         </div>
       </header >
