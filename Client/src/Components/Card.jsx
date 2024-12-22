@@ -4,6 +4,8 @@ import AniDoc from './AniDoc.jsx';
 import AniCalendar from './AniCalander.jsx';
 import AniHeartBeat from './AniHeartBeat';
 import AniAi from './AniAi.jsx';
+import { Link } from 'react-router-dom';
+import DoctorListing from '../Pages/DoctorListing.jsx';
 
 function Card() {
   const [cards] = useState([
@@ -62,7 +64,10 @@ function Card() {
                     <div>
                         <h3 className='card-title'>{card.title}</h3>
                         <p className='card-content'>{card.content}</p>
-                        <button className='btn'>Book</button>
+                        <button className='btn'>
+                          <Link to="/DoctorListing">
+                          Book</Link>
+                        </button>
                     </div>
                   </div>
 
