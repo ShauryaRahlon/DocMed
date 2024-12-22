@@ -1,92 +1,209 @@
-:root {
-    --dark-bg: #1c1c1c;
-    --dark-card-bg: #292929;
-    --text-color: #f5f5f5;
-    --primary-color: #4caf50;
-    --error-color: #ff6b6b;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-}
-
-.app-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.header {
-    width: 100%;
+/* Header styles */
+.header1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 20px #10b981;
 }
 
-.toggle-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.toggle-button:hover {
-    opacity: 0.9;
-}
-
+/* Dropzone styles */
 .dropzone {
-    background-color: var(--dark-card-bg);
-    border: 2px dashed var(--text-color);
-    color: var(--text-color);
-    padding: 20px;
+    border: 2px dashed #ccc;
     border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 20px;
     cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+    margin: 0 auto;
+    max-width: 600px;
 }
 
+.dropzone.dragover {
+    border-color: #10b981;
+}
+
+.dropzone p {
+    margin: 0;
+}
+
+/* Upload button styles */
 .upload-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
+    background-color: #10b981;
+    color: #fff;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease-in;
 }
 
 .upload-button:hover {
-    background-color: #45a049;
+    background-color: #098c60;
 }
 
-.caption h3 {
-    margin-top: 1rem;
-    color: #4caf50;
+.upload-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
+/* Caption styles */
 .caption {
-    /* background-color: #f4f4f4; */
-    /* max-width: 30%; */
-    font-size: 18px;
-    min-height: 10vh;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
+    margin: 10px auto;
+    font-weight: bold;
+    color: #ffffff;
+    width: 40%;
+    max-width: 600px;
+    text-align: center;
 }
 
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Container styles */
+.app-container {
+    padding: 20px;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    /* Add space for footer */
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Error message styles */
 .error {
-    color: var(--error-color);
+    color: #ff4444;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Media Queries */
+
+/* Pixel 6/7/8 (393x851) */
+@media screen and (max-width: 393px) {
+    .header1 {
+        font-size: 24px;
+        margin: 5px 0;
+    }
+
+    .dropzone {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .caption {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 14px;
+    }
+
+    .upload-button {
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .app-container {
+        padding: 10px;
+        padding-bottom: 70px;
+    }
+}
+
+/* Pixel 6/7/8 Pro (411x914) */
+@media screen and (min-width: 394px) and (max-width: 411px) {
+    .header1 {
+        font-size: 26px;
+    }
+
+    .caption {
+        width: 85%;
+        font-size: 15px;
+    }
+
+    .upload-button {
+        width: 70%;
+    }
+}
+
+/* Pixel 5 (393x851) */
+@media screen and (max-width: 393px) and (max-height: 851px) {
+    .app-container {
+        padding-bottom: 80px;
+    }
+
+    .dropzone {
+        min-height: 100px;
+    }
+}
+
+/* Pixel 4 (353x745) */
+@media screen and (max-width: 353px) {
+    .header1 {
+        font-size: 22px;
+    }
+
+    .dropzone {
+        padding: 12px;
+        margin: 8px;
+    }
+
+    .caption {
+        width: 95%;
+        font-size: 13px;
+    }
+
+    .upload-button {
+        width: 90%;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* General tablet/larger phones */
+@media screen and (min-width: 412px) and (max-width: 768px) {
+    .caption {
+        width: 70%;
+    }
+
+    .upload-button {
+        width: 60%;
+    }
+
+    .dropzone {
+        max-width: 90%;
+    }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .header1 {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    .dropzone {
+        padding: 10px;
+        margin: 5px auto;
+    }
+
+    .app-container {
+        padding-bottom: 50px;
+    }
+
+    footer {
+        padding: 5px 0;
+    }
 }

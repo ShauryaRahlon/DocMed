@@ -46,7 +46,7 @@ function Review() {
 
     return (
         <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-            <header className="header">
+            <header className="header1">
                 <h1>AI Buddy</h1>
             </header>
             <div

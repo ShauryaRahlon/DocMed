@@ -1,4 +1,4 @@
-// require('dotenv').config();
+
 import dotenv from "dotenv";
 dotenv.config();
 // const express = require('express');
@@ -39,7 +39,6 @@ app.post('/caption', async (req, res) => {
             },
             'Medically Sumarize this image and if it is unrelated to medicine industry output please enter a valid image and dont output anything else',
         ]);
-
         res.json({ caption: result.response.text() });
     } catch (err) {
         console.error(err);
