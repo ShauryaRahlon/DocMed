@@ -24,7 +24,7 @@ Welcome to the coolest medical health platform this side of the playpen! Our app
 
 ### 💊 Additional Features
 
-- Medicine reminders
+- Hospital Finder
 - Health record management
 - Emergency contact system
 - WhatsApp integration for notifications
@@ -105,7 +105,7 @@ cd server
 npm start
 ```
 
-## 👶 Meet the Baby_Bois Team
+## 🅱️ Meet the Baby_Bois Team
 
 - Backend Master->Saarthak Agarwal
 - Frontend Whipper->Vishwas Srivastava
@@ -120,10 +120,6 @@ We welcome all baby developers to contribute! Please read our contribution guide
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
 
 ## 💖 Acknowledgments
 
