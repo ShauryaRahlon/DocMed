@@ -48,7 +48,6 @@ function MainHome() {
               </Link>
             </div>
             <div>
-              {/* <button className="login-button">Login</Link></button> */}
               <Link to="/signup" className="login-button">
                 Signup
               </Link>

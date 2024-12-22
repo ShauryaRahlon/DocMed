@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styling/NotFound.css";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
     return (
@@ -12,7 +13,6 @@ const NotFound = () => {
                 <div className="starfourth"></div>
                 <div className="starfifth"></div>
             </div>
-            {/* Dust Particle End */}
             <div className="lamp__wrap">
                 <div className="lamp">
                     <div className="cable"></div>
@@ -35,16 +35,9 @@ const NotFound = () => {
                             try again, or take a look at our.
                         </p>
                     </div>
-                    <div className="error__nav e-nav">
-                        <a
-                            href="https://codepen.io/uiswarup/pen/qBebRpq"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="e-nav__link"
-                        >
-                            Go to CodePen
-                        </a>
-                    </div>
+                    <Link to="/" className="error__home">
+                        <button>Back to Home</button>
+                    </Link>
                 </div>
                 {/* END Content */}
             </section>
