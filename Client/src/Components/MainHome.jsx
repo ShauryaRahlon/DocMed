@@ -110,6 +110,12 @@ function MainHome() {
             <Link to="/contact" className="nav-link ContactUs">
               Contact Us
             </Link>
+            <Link to="/map" className="nav-link Map">
+              Map
+            </Link>
+            <Link to="/review" className="nav-link Review">
+              Review
+            </Link>
           </nav>
         </div>
       </header >
