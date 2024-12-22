@@ -9,6 +9,7 @@ import Signup from "./Pages/Signup.jsx";
 import DoctorListing from "./Pages/DoctorListing.jsx";
 import Review from "./Components/Review.jsx";
 import Map from "./Pages/Map.jsx";
+import NotFound from "./Components/NotFound.jsx";
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/doctorlisting" element={<DoctorListing />} />
           <Route path="/review" element={<Review />} />
           <Route path="/map" element={<Map />} />
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
         <Footer />
