@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
 import ReactMarkdown from 'react-markdown';
-import { useState, useEffect } from 'react';
-import '../Styling/Review.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../Styling/Review.css';
+
 function Review() {
     const [file, setFile] = useState(null);
     const [caption, setCaption] = useState('');
@@ -20,6 +22,7 @@ function Review() {
     const handleUpload = async () => {
         if (!file) {
             setError('Please select a file first.');
+            toast.error('Please select a file first.', { autoClose: 2000 }); // 2-second timer
             return;
         }
 
@@ -34,9 +37,10 @@ function Review() {
             });
             setTimeout(() => {
                 setCaption(response.data.caption);
-            }, 500); // Simulate delay for animation
+                toast.success('Review generated successfully.', { autoClose: 2000 }); // 2-second timer
+            }, 500);
         } catch (err) {
-            setError('Error generating caption. Please try again.');
+            toast.error('Error generating caption. Please try again.', { autoClose: 2000 }); // 2-second timer
         } finally {
             setLoading(false);
         }
@@ -49,10 +53,7 @@ function Review() {
             <header className="header1">
                 <h1>AI Buddy</h1>
             </header>
-            <div
-                {...getRootProps()}
-                className="dropzone"
-            >
+            <div {...getRootProps()} className="dropzone">
                 <input {...getInputProps()} />
                 <p>{file ? file.name : 'Drag & drop an image, or click to select one'}</p>
             </div>
@@ -66,6 +67,9 @@ function Review() {
                 </div>
             )}
             {error && <p className="error">{error}</p>}
+
+            {/* ToastContainer must be included to render the toasts */}
+            <ToastContainer position="top-right" autoClose={2000} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
         </div>
     );
 }
