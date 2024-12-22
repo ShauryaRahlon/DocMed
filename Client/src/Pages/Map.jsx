@@ -1,9 +1,7 @@
-
-
 import React, { useEffect, useState } from 'react';
 
 const Map = () => {
-  const [userLocation, setUserLocation] = useState({ lat: 37.4220656, lng: -122.0840897 }); // Default location
+  const [userLocation, setUserLocation] = useState({ lat: 0, lng: 0 }); // Default location
   const [map, setMap] = useState(null);
   const [places, setPlaces] = useState([]);
   const [autocomplete, setAutocomplete] = useState(null);
@@ -127,7 +125,7 @@ const Map = () => {
 
           // Add click listener to open the URL for the place
           marker.addListener('click', () => {
-            window.location.href = `http://localhost:3000/${place.place_id}`;
+            window.location.href = `http://localhost:5173/doctorslisting`;
           });
 
           // Store the marker and infoWindow to manage them later (if needed)
@@ -135,11 +133,8 @@ const Map = () => {
           infoWindows.push(infoWindow);
 
               // Add info window for each marker
-              
-
             });
 
-            
 
             // Adjust map bounds to show all places
             const bounds = new google.maps.LatLngBounds();

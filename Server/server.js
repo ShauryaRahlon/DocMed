@@ -37,7 +37,7 @@ app.post('/caption', async (req, res) => {
                     mimeType: image.mimetype,
                 },
             },
-            'Medically Sumarize this image and if it is unrelated to medicine industry output please enter a valid image and dont output anything else',
+            'Medically analyze this image. If unrelated to the medical field, respond with Invalid image. Suggest precautions based on the diagnosis if applicable.',
         ]);
         res.json({ caption: result.response.text() });
     } catch (err) {
