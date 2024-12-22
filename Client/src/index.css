@@ -1,0 +1,16 @@
+/* color the scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0b8e63;
+}

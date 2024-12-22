@@ -111,7 +111,7 @@ function MainHome() {
               Contact Us
             </Link>
             <Link to="/map" className="nav-link Map">
-              Map
+              Locate Hospitals
             </Link>
             <Link to="/review" className="nav-link Review">
               Review
