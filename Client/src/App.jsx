@@ -10,6 +10,7 @@ import DoctorListing from "./Pages/DoctorListing.jsx";
 import Review from "./Components/Review.jsx";
 import Map from "./Pages/Map.jsx";
 import NotFound from "./Components/NotFound.jsx";
+import Pp from "./Components/Pp.jsx";
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/doctorlisting" element={<DoctorListing />} />
           <Route path="/review" element={<Review />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/privacy" element={<Pp />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes>
