@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Styling/Review.css';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Loader = () => {
     return (
@@ -63,6 +65,9 @@ function Review() {
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     return (
+        <>
+        <div className='ai-container'>
+            <button className='ai-nav-item'><Link to='/'>Home</Link></button>
         <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
             <style>
                 {`
@@ -119,14 +124,28 @@ function Review() {
                 `}
             </style>
             <header className="header1">
-                <h1>AI Buddy</h1>
+                <h1 className='btn-shine'>AI Buddy
+                </h1>
             </header>
             <div {...getRootProps()} className="dropzone">
                 <input {...getInputProps()} />
                 <p>{file ? file.name : 'Drag & drop an image, or click to select one'}</p>
             </div>
-            <button onClick={handleUpload} disabled={loading || !file} className="upload-button">
+            {/* <button onClick={handleUpload} disabled={loading || !file} className="upload-button">
                 {loading ? 'Generating...' : 'Analyze'}
+            </button> */}
+            <button className="analyse-button" onClick={handleUpload} disabled={loading || !file}>
+                <div className="inner">
+                    <div className="svgs">
+                        <svg viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className="svg-l">
+                        <path d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15" fill="currentColor" />
+                        </svg>
+                        <svg viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" className="svg-s">
+                        <path d="M240 128a15.79 15.79 0 0 1-10.5 15l-63.44 23.07L143 229.5a16 16 0 0 1-30 0l-23.06-63.44L26.5 143a16 16 0 0 1 0-30l63.44-23.06L113 26.5a16 16 0 0 1 30 0l23.07 63.44L229.5 113a15.79 15.79 0 0 1 10.5 15" fill="currentColor" />
+                        </svg>
+                    </div>
+                        {loading ? 'Generating...' : 'Analyze'}
+                </div>
             </button>
             {loading && <Loader />}
             {caption && (
@@ -147,6 +166,8 @@ function Review() {
                 pauseOnHover
             />
         </div>
+        </div>
+        </>
     );
 }
 

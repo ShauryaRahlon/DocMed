@@ -9,6 +9,7 @@ import Header from './Header.jsx';
 import Carousel from './Carousel.jsx';
 import OnlineCard from './OnlineCard.jsx';
 
+
 function MainHome() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,6 +32,7 @@ function MainHome() {
         </div>
       </main>
       <Card />
+
       <Carousel />
 
     </>
