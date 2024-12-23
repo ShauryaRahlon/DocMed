@@ -39,7 +39,7 @@ function Card() {
             <h1>Our Features</h1>
             <div className="cards">
               {cards.map((card, i) => {
-                return ( // Add the missing return statement
+                return ( 
                   <div key={i} className="card">
                     {i === 0 && (
                 <div className="animation-container">
@@ -64,9 +64,23 @@ function Card() {
                     <div>
                         <h3 className='card-title'>{card.title}</h3>
                         <p className='card-content'>{card.content}</p>
-                        <button className='btn'>
+                        {/* <button className='btn'>
                           <Link to="/DoctorListing">
                           Book</Link>
+                        </button> */}
+                        <button className='btn'>
+                        {i === 0 && (
+                            <Link to="/DoctorListing">Book</Link>
+                          )}
+                          {i === 1 && (
+                            <Link to="/Connect">Book</Link>
+                          )}
+                          {i === 2 && (
+                          <Link to="/">Book</Link>
+                          )}
+                          {i === 3 && (
+                            <Link to="/Review">Book</Link>
+                          )}
                         </button>
                     </div>
               </div>
