@@ -1,209 +1,384 @@
-/* Header styles */
+/* General reset for responsive design */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-contianer {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  /* background: #b3b4bd; */
+  background: #748d92;
+  color: var(--dark-mode-text, #000);
+}
+
+/* Navbar */
+.ai-navbar {
+  background: #748d92;
+  color: black;
+  padding: 10px 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-right: 40px;
+}
+
+.btn-shine {
+  padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+}
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+/* .ai-nav-item {
+  width: 4em;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.ai-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+} */
+
+.ai-nav-item {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
+  text-align: center;
+  margin-left: 10px;
+}
+
+.ai-nav-item:hover {
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff,
+    2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.ai-nav-item:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff,
+    2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+/* App Container */
+.app-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 95%;
+  width: 100%;
+  border-radius: 8px;
+  /* background: var(--dark-mode-bg, #fff); */
+  /* color: var(--dark-mode-text, #000); */
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  border-radius: 30px;
+  background: lightgrey;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --dark-mode-bg: #1a1a1a;
+  --dark-mode-text: #fff;
+}
+
+/* Header */
 .header1 {
-    text-align: center;
-    margin: 10px 0;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 20px #10b981;
+  text-align: center;
+  font-size: clamp(1.5rem, 2vw, 3rem); /* Fluid typography */
+  margin-bottom: 20px;
+  color: #10b981;
+  text-shadow: 2px 2px 10px rgba(16, 185, 129, 0.5);
 }
 
-/* Dropzone styles */
+/* Dropzone */
 .dropzone {
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.3s ease-in-out;
-    margin: 0 auto;
-    max-width: 600px;
+  border: 2px dashed #000;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  transition: border-color 0.3s ease;
 }
 
-.dropzone.dragover {
-    border-color: #10b981;
+.dropzone:hover {
+  border-color: #10b981;
 }
 
 .dropzone p {
-    margin: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--dark-mode-text, #333);
 }
 
-/* Upload button styles */
-.upload-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #10b981;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in;
+/* Button */
+.analyse-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.upload-button:hover {
-    background-color: #098c60;
+.analyse-button {
+  display: block;
+  margin: 20px auto;
+  /* padding: 10px 10px; */
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #10b981;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  scale: 0.8;
 }
 
-.upload-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.analyse-button:active {
+  transform: scale(0.98);
 }
 
-/* Caption styles */
+.analyse-button:hover {
+  background-color: #098c60;
+}
+
+.analyse-button {
+  cursor: pointer;
+  border: solid 4px #161616;
+  border-top: none;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 4px 10px #00000062, 0px 10px 40px -10px #000000a6,
+    0px 12px 45px -15px #00000071;
+  transition: all 0.3s ease;
+  scale: 0.7;
+}
+.inner {
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: solid 3px #374e72;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #5771a5, #000);
+  color: #fff;
+  text-shadow: 1px 1px #000, 0 0 9px #fff;
+}
+.svgs {
+  position: relative;
+  margin-top: 9px;
+  z-index: 10;
+}
+.svgs > * {
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(1px 1px 0px #000);
+}
+.svgs .svg-s {
+  position: absolute;
+  font-size: 0.8rem;
+  left: 20px;
+  top: -4px;
+}
+.analyse-button:active {
+  box-shadow: none;
+}
+
+/* Inner Button Styles */
+.inner {
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border-bottom: solid 3px #374e72;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #5771a5, #000);
+  color: #fff;
+  text-shadow: 1px 1px #000, 0 0 9px #fff;
+}
+
+/* Loader */
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.loading {
+  display: flex;
+  gap: 6px;
+  height: 50px;
+}
+
+.loading span {
+  width: 4px;
+  height: 100%;
+  background-color: #4c86f9;
+  animation: scale 0.9s ease-in-out infinite;
+}
+
+.loading span:nth-child(2) {
+  background-color: #49a84c;
+  animation-delay: -0.8s;
+}
+
+.loading span:nth-child(3) {
+  background-color: #f6bb02;
+  animation-delay: -0.7s;
+}
+
+@keyframes scale {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.05);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+}
+
+/* Caption */
 .caption {
-    margin: 10px auto;
-    font-weight: bold;
-    color: #ffffff;
-    width: 40%;
-    max-width: 600px;
-    text-align: center;
+  margin: 20px auto;
+  text-align: center;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  width: 80%;
+  color: var(--dark-mode-text, #000);
 }
 
-/* Footer styles */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
-}
-
-/* Container styles */
-.app-container {
-    padding: 20px;
-    min-height: 100vh;
-    padding-bottom: 60px;
-    /* Add space for footer */
-}
-
-.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
-/* Error message styles */
+/* Error Message */
 .error {
-    color: #ff4444;
-    text-align: center;
-    margin: 10px 0;
+  color: #ff4444;
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Media Queries */
 
-/* Pixel 6/7/8 (393x851) */
-@media screen and (max-width: 393px) {
-    .header1 {
-        font-size: 24px;
-        margin: 5px 0;
-    }
+/* Small devices (phones, <768px) */
+@media screen and (max-width: 768px) {
+  .app-container {
+    max-width: 90%;
+    padding: 15px;
+  }
 
-    .dropzone {
-        padding: 15px;
-        margin: 10px;
-    }
+  .dropzone {
+    padding: 15px;
+    max-width: 100%;
+  }
 
-    .caption {
-        width: 90%;
-        margin: 10px auto;
-        font-size: 14px;
-    }
+  .analyse-button {
+    /* padding: 8px 16px; */
+    font-size: 0.9rem;
+    scale: 0.6;
+  }
 
-    .upload-button {
-        width: 80%;
-        margin: 15px auto;
-    }
-
-    .app-container {
-        padding: 10px;
-        padding-bottom: 70px;
-    }
+  .caption {
+    font-size: 1rem;
+    width: 90%;
+  }
 }
 
-/* Pixel 6/7/8 Pro (411x914) */
-@media screen and (min-width: 394px) and (max-width: 411px) {
-    .header1 {
-        font-size: 26px;
-    }
+/* Medium devices (tablets, 768px-1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .app-container {
+    max-width: 80%;
+  }
 
-    .caption {
-        width: 85%;
-        font-size: 15px;
-    }
+  .dropzone {
+    max-width: 80%;
+  }
 
-    .upload-button {
-        width: 70%;
-    }
+  .caption {
+    width: 80%;
+  }
 }
 
-/* Pixel 5 (393x851) */
-@media screen and (max-width: 393px) and (max-height: 851px) {
-    .app-container {
-        padding-bottom: 80px;
-    }
+/* Large devices (desktops, >1024px) */
+@media screen and (min-width: 1024px) {
+  .app-container {
+    max-width: 70%;
+  }
 
-    .dropzone {
-        min-height: 100px;
-    }
-}
+  .dropzone {
+    max-width: 70%;
+  }
 
-/* Pixel 4 (353x745) */
-@media screen and (max-width: 353px) {
-    .header1 {
-        font-size: 22px;
-    }
+  .analyse-button {
+    font-size: 1.1rem;
+  }
 
-    .dropzone {
-        padding: 12px;
-        margin: 8px;
-    }
-
-    .caption {
-        width: 95%;
-        font-size: 13px;
-    }
-
-    .upload-button {
-        width: 90%;
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-/* General tablet/larger phones */
-@media screen and (min-width: 412px) and (max-width: 768px) {
-    .caption {
-        width: 70%;
-    }
-
-    .upload-button {
-        width: 60%;
-    }
-
-    .dropzone {
-        max-width: 90%;
-    }
-}
-
-/* Landscape orientation */
-@media screen and (max-height: 450px) and (orientation: landscape) {
-    .header1 {
-        font-size: 20px;
-        margin: 5px 0;
-    }
-
-    .dropzone {
-        padding: 10px;
-        margin: 5px auto;
-    }
-
-    .app-container {
-        padding-bottom: 50px;
-    }
-
-    footer {
-        padding: 5px 0;
-    }
+  .caption {
+    font-size: 1.2rem;
+    width: 60%;
+  }
 }
