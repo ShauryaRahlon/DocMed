@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Login from '../Pages/Login.jsx';
 import Signup from '../Pages/Signup.jsx';
 import Header from './Header.jsx';
+import Carousel from './Carousel.jsx';
 
 
 function MainHome() {
@@ -71,8 +72,8 @@ function MainHome() {
           <img className='features-image' src="/public/Meet Doctor (1).png" alt="Features Image" />
         </div>
       </main>
-
       <Card />
+      <Carousel />
     </>
   );
 }

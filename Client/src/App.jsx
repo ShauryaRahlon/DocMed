@@ -12,6 +12,7 @@ import Map from "./Pages/Map.jsx";
 import NotFound from "./Components/NotFound.jsx";
 import Pp from "./Components/Pp.jsx";
 import Header from "./Components/Header.jsx";
+import Carousel from "./Components/Carousel.jsx";
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/privacy" element={<Pp />} />
           <Route path="/header" element={<Header />} />
+          <Route path="/carousel" element={<Carousel />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes>
