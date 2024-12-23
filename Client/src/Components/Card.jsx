@@ -25,7 +25,7 @@ function Card() {
         'Book appointments, consult doctors, and manage prescriptions all in one place.',
     },
     {
-      title: 'CareGenie ',
+      title: 'AI Buddy',
       content:
         'Your personal health assistant, bringing expert care and convenience to your fingertips.',
     },
@@ -69,7 +69,7 @@ function Card() {
                           Book</Link>
                         </button>
                     </div>
-            </div>
+              </div>
 
                 );
               })}
