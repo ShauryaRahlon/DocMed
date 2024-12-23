@@ -3,13 +3,13 @@ body {
     color: #e5e7eb;
 }
 
-.listing-container {
+.listing-container-new {
     max-width: 1024px;
     margin: 0 auto;
     padding: 1.5rem;
 }
 
-.header {
+.header-new {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -17,19 +17,19 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.check-icon {
+.check-icon-new {
     width: 1.25rem;
     height: 1.25rem;
     color: #9ca3af;
 }
 
-.cards-container {
+.cards-container-new {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.doctor-card {
+.doctor-card-new {
     background-color: #1f2937;
     border: 1px solid #374151;
     border-radius: 0.5rem;
@@ -38,28 +38,28 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-.doctor-card:hover {
+.doctor-card-new:hover {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
         0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-.doctor-container {
+.doctor-container-new {
     display: flex;
     gap: 1.5rem;
 }
 
-.image-container {
+.image-container-new {
     position: relative;
 }
 
-.doctor-image {
+.doctor-image-new {
     width: 6rem;
     height: 6rem;
     border-radius: 0.5rem;
     object-fit: cover;
 }
 
-.logo-container {
+.logo-container-new {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -69,70 +69,70 @@ body {
     border: 1px solid #374151;
 }
 
-.practo-logo {
+.practo-logo-new {
     height: 1.5rem;
 }
 
-.info-container {
+.info-container-new {
     flex: 1;
 }
 
-.header-container {
+.header-container-new {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.doctor-name {
+.doctor-name-new {
     font-size: 1.25rem;
     font-weight: 600;
     color: #60a5fa;
 }
 
-.specialization {
+.specialization-new {
     color: #d1d5db;
 }
 
-.experience {
+.experience-new {
     color: #9ca3af;
     font-size: 0.875rem;
 }
 
-.availability {
+.availability-new {
     display: flex;
     align-items: center;
     color: #34d399;
 }
 
-.clock-icon {
+.clock-icon-new {
     width: 1rem;
     height: 1rem;
     margin-right: 0.25rem;
 }
 
-.location-container {
+.location-container-new {
     margin-top: 0.5rem;
 }
 
-.location,
-.fee {
+.location-new,
+.fee-new {
     color: #d1d5db;
 }
 
-.footer-container {
+.footer-container-new {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
 }
 
-.ratings-container {
+.ratings-container-new {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.rating-badge {
+.rating-badge-new {
     background-color: #34d399;
     color: #111827;
     padding: 0.25rem 0.5rem;
@@ -141,17 +141,17 @@ body {
     font-weight: 500;
 }
 
-.patient-stories {
+.patient-stories-new {
     color: #9ca3af;
     font-size: 0.875rem;
     text-decoration: none;
 }
 
-.patient-stories:hover {
+.patient-stories-new:hover {
     color: #60a5fa;
 }
 
-.book-button {
+.book-button-new {
     background-color: #3b82f6;
     color: white;
     padding: 0.5rem 1.5rem;
@@ -161,35 +161,35 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.book-button:hover {
+.book-button-new:hover {
     background-color: #2563eb;
 }
 
-.no-fee {
+.no-fee-new {
     font-size: 0.75rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
-    .doctor-container {
+    .doctor-container-new {
         flex-direction: column;
     }
 
-    .image-container {
+    .image-container-new {
         align-self: center;
     }
 
-    .header-container {
+    .header-container-new {
         flex-direction: column;
         gap: 0.5rem;
     }
 
-    .footer-container {
+    .footer-container-new {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .book-button {
+    .book-button-new {
         width: 100%;
     }
 }

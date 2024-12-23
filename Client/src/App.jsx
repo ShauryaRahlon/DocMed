@@ -35,6 +35,7 @@ function App() {
               <Route path="/review" element={<Review />} />
               <Route path="/map" element={<Map />} />
               <Route path="/privacy" element={<Pp />} />
+              <Route path="/onlinecard" element={<OnlineCard />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/connect" element={<Connect />} />
               <Route path="/connected/:roomId" element={<EstablishedConnection />} />
