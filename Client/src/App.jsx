@@ -16,33 +16,32 @@ import EstablishedConnection from "./Pages/EstablishedConnection.jsx";
 
 import { SocketProvider } from "./Providers/Socket.jsx";
 import { PeerProvider } from "./Providers/Peer.jsx";
+import OnlineCard from "./Components/OnlineCard.jsx";
 
 function App() {
 
   return (
     <>
       <Router>
-      <SocketProvider>
-        <PeerProvider>
-          <Routes>
-          
-            <Route path="/" element={<MainHome />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/doctorlisting" element={<DoctorListing />} />
-            <Route path="/review" element={<Review />} />
-            <Route path="/map" element={<Map />} />
-            <Route path="/privacy" element={<Pp />} />
-            <Route path="*" element={<NotFound />} />
+        <SocketProvider>
+          <PeerProvider>
+            <Routes>
+
+              <Route path="/" element={<MainHome />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/doctorlisting" element={<DoctorListing />} />
+              <Route path="/review" element={<Review />} />
+              <Route path="/map" element={<Map />} />
+              <Route path="/privacy" element={<Pp />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/connect" element={<Connect />} />
+              <Route path="/connected/:roomId" element={<EstablishedConnection />} />
 
 
-            <Route path="/connect" element={<Connect />} />
-            <Route path="/connected/:roomId" element={<EstablishedConnection />} />
-
- 
-        </Routes>
-        </PeerProvider>
+            </Routes>
+          </PeerProvider>
         </SocketProvider>
         <Footer />
       </Router>

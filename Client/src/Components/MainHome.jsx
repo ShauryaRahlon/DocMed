@@ -7,6 +7,7 @@ import Login from '../Pages/Login.jsx';
 import Signup from '../Pages/Signup.jsx';
 import Header from './Header.jsx';
 import Carousel from './Carousel.jsx';
+import OnlineCard from './OnlineCard.jsx';
 
 function MainHome() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,7 +61,8 @@ function MainHome() {
       {/* Main Section */}
       < main className="main" >
         <div className="main-content">
-          <h2 className="main-title">ONLINE DOCTOR APPOINTMENT APP</h2>
+          {/* <h2 className="main-title">ONLINE DOCTOR APPOINTMENT APP</h2> */}
+          <OnlineCard />
         </div>
       </main >
 
