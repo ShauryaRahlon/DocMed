@@ -9,6 +9,7 @@ const Login = () => {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const [receivedToken, setToken] = useState("");
 
   const navigate = useNavigate();
 
@@ -29,6 +30,11 @@ const Login = () => {
       );
 
       console.log(response);
+
+      const receivedToken = response.data.token;
+      console.log(receivedToken);
+      setToken(receivedToken);
+      localStorage.setItem('authToken',receivedToken);
 
       if (response.status === 201) {
         console.log("Navigating to home page");

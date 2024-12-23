@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import User from '../Models/user.model.js';
 import bcrypt from 'bcryptjs'; //Used to encrypt the password in the database
 import nodemailer from 'nodemailer';
+import jwt from 'jsonwebtoken';
 
 // Load environment variables
 dotenv.config();
@@ -144,10 +145,11 @@ export const login = async (req, res) => {
     const checkUser = await User.findOne({ email });
     const isPasswordCorrect = await bcrypt.compare(password, checkUser?.password || ""); //Adding a null string so that on adding wrong password no error gets thrown
 
-
     if (checkUser && isPasswordCorrect) {
-        return res.status(201).json({ message: 'Login successful!' });
+        const token = jwt.sign({ _id: checkUser._id }, process.env.MY_SECRET, { expiresIn: '1h' });
+        return res.status(201).json({ message: 'Login successful!', token });
     } else {
         return res.status(401).json({ message: 'Invalid email or password.' });
     }
 };
+      

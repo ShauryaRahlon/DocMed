@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./Utils/dbConnection.js";
 import cors from 'cors'
 import { Server } from 'socket.io'
+import cookieParser from 'cookie-parser'
 
 dotenv.config();
 
@@ -24,6 +25,9 @@ connectDB();
 
 // Middleware to parse incoming JSON data
 app.use(express.json());
+
+// Middleware to parse cookies
+app.use(cookieParser());
 
 //Setting up socket
 

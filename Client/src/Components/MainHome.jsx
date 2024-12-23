@@ -14,49 +14,6 @@ function MainHome() {
 
   return (
     <>
-      {/* Top Navbar */}
-      <nav className="navbar">
-        <div className="navbar-container">
-          {/* Hamburger Menu Icon */}
-          <div
-            className="hamburger-icon"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="icon"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 7.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-              />
-            </svg>
-          </div>
-
-          {/* Navbar Items */}
-          <div
-            className={`navbar-items ${menuOpen ? 'show' : 'hide'}`}
-          >
-
-            <div className='login_btn'>
-              {/* <button className="login-button">Login</Link></button> */}
-              <Link to="/login" className="login-button">
-                Login
-              </Link>
-            </div>
-            <div className='signup-btn'>
-              <Link to="/signup" className="login-button">
-                Signup
-              </Link>
-            </div>
-          </div>
-        </div >
-      </nav >
       <Header />
       {/* Main Section */}
       < main className="main" >
