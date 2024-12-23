@@ -69,7 +69,7 @@ function Card() {
                           Book</Link>
                         </button>
                     </div>
-                  </div>
+            </div>
 
                 );
               })}

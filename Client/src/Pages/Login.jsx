@@ -58,7 +58,7 @@ const Login = () => {
     <div className="main-container">
       <div className='login-container'>
         <div style={{display:"flex", gap:"15px", justifyItems:"center", alignItems:"center", margin:"10px 0 20px 10px"}}>
-          <img src="/public/Logo-icon.webp" alt="DocMed icon" style={{width:"60px", height: "60px", borderRadius:"50px"}} />
+          <img src="/public/Logo2.webp" alt="DocMed icon" style={{width:"60px", height: "60px", borderRadius:"50px"}} />
           <h2 style={{fontSize:"30px", color:"white"}}>DocMed</h2>
         </div>
         <h2 className="login-heading">Login</h2>

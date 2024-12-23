@@ -82,7 +82,7 @@ const Pp = () => {
             <section className="section">
                 <h2 className="section-title">9. Contact Us</h2>
                 <p className="text">If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-                <p className="text">[Insert Contact Information]</p>
+                <p className="text">DocMed@mail.com</p>
             </section>
         </div>
     );
