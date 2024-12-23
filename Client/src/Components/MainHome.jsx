@@ -5,6 +5,7 @@ import Card from './Card.jsx';
 import { Link } from 'react-router-dom';
 import Login from '../Pages/Login.jsx';
 import Signup from '../Pages/Signup.jsx';
+import Header from './Header.jsx';
 
 
 function MainHome() {
@@ -55,32 +56,7 @@ function MainHome() {
           </div>
         </div >
       </nav >
-
-      {/* Header */}
-      < header className="header" >
-        <div className="header-container">
-          <a href="/" className="logo">
-            <img
-              src="/public/Logo-icon.webp"
-              alt="DocPulse Logo"
-              className="logo-image"
-            />
-            <h1 className="logo-text">DocMed</h1>
-          </a>
-          <nav className="header-nav">
-            <Link to="/" className="nav-link Home">
-              Home
-            </Link>
-            <Link to="/map" className="nav-link Map">
-              Locate Hospitals
-            </Link>
-            <Link to="/review" className="nav-link Review">
-              Ask From AI
-            </Link>
-          </nav>
-        </div>
-      </header >
-
+      <Header />
       {/* Main Section */}
       < main className="main" >
         <div className="main-content">
