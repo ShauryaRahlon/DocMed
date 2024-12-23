@@ -1,201 +1,239 @@
-/* Carousel Container */
-.carousel-container {
-    width: 100%;
-    max-width: 100%;
-    /* Removed the fixed max-width to allow full width on smaller screens */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: transparent;
-    /* Transparent background */
-    border-radius: 5px;
-    /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Subtle box shadow */
+/* Updated Background Styles for Carousel */
+.senior-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  background: linear-gradient(
+    135deg,
+    #f9fafb,
+    #e5e7eb
+  ); /* Light gradient for professionalism */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  padding-left: 10px;
+  padding-right: 10px; /* Ensure padding on smaller screens */
 }
 
-.senior-container {
-    width: 100%;
-    max-width: 100%;
-    /* Same as carousel-container for full width on smaller screens */
-    margin: 0 auto;
-    padding-bottom: 70px;
-    background-color: transparent;
-    /* Transparent background */
-    border-radius: 5px;
-    /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Subtle box shadow */
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f3f4f6
+  ); /* Subtle gradient for elegance */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  padding-left: 10px;
+  padding-right: 10px; /* Ensure padding on smaller screens */
 }
 
 /* Slick Slider */
 .slick-slider {
-    overflow: visible;
-    /* Ensure no clipping of content */
+  overflow: visible;
+  /* Ensure no clipping of content */
 }
 
 /* Slide Image Container */
 .slide-image-container {
-    position: relative;
-    /* For positioning hover effect */
-    overflow: hidden;
-    /* Hide overflow of hover content */
+  position: relative;
+  /* For positioning hover effect */
+  overflow: hidden;
+  /* Hide overflow of hover content */
 }
 
 /* Slide Image */
 .slide-image {
-    width: 100%;
-    height: 300px;
-    /* Fixed height for all images */
-    object-fit: contain;
-    /* Compress the image without cropping */
-    background-color: transparent;
-    /* Transparent background */
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    /* Smooth zoom effect */
+  width: 100%;
+  height: 300px;
+  object-fit: contain; /* Crop the image for a more consistent look */
+  background: #f3f4f6; /* Neutral background in case of loading delays */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 /* Zoom Effect on Hover */
 .slide-image-container:hover .slide-image {
-    transform: scale(1.1);
-    /* Zoom on hover */
+  transform: scale(1.1);
+  /* Zoom on hover */
 }
 
 /* Slide Hover Review */
 .slide-hover-review {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: rgba(17, 24, 39, 0.8); /* Darker semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Show Review Text on Hover */
 .slide-image-container:hover .slide-hover-review {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Slide Caption */
 .slide-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black background */
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 10;
-    /* Ensure it appears above the image */
-    font-size: 1rem;
-    font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10;
 }
 
 /* Slick Dots */
 .slick-dots {
-    text-align: center;
-    padding: 10px 0;
+  text-align: center;
+  padding: 10px 0;
 }
 
+/* Slick Dots */
 .slick-dots li button:before {
-    font-size: 18px;
-    color: #333;
+  font-size: 18px;
+  color: #4b5563; /* Neutral gray for inactive dots */
 }
 
 .slick-dots li.slick-active button:before {
-    color: #007bff;
-    /* Blue color for active dot */
+  color: #10b981; /* Accent green for active dot */
 }
 
 /* Slick Arrows */
 .slick-prev,
 .slick-next {
-    font-size: 24px;
-    color: #333;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    opacity: 0.7;
-    z-index: 20;
-    /* Ensure arrows are above the images */
+  font-size: 18px; /* Reduce the size */
+  color: #4b5563; /* Neutral gray for better appearance */
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 50%;
+  padding: 8px; /* Adjust padding */
+  opacity: 0.8;
+  z-index: 20; /* Ensure it stays above the content */
+  transition: background 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  top: 50%; /* Center the arrows vertically */
+  transform: translateY(-50%);
+}
+/* Positioning the arrows within the container */
+.slick-prev {
+  left: 10px; /* Adjust distance from the left */
+}
+
+.slick-next {
+  right: 10px; /* Adjust distance from the right */
 }
 
 .slick-prev:hover,
 .slick-next:hover {
-    opacity: 1;
+  opacity: 1;
+  background: rgba(255, 255, 255, 1); /* Brighter on hover */
 }
 
 /* Media Query for Responsiveness */
-@media (max-width: 768px) {
-    .carousel-container {
-        padding: 15px;
-        max-width: 95%;
-        /* Reduce max-width for better responsiveness */
-    }
+@media (max-width: 1024px) {
+  .carousel-container {
+    padding: 15px;
+  }
 
-    .senior-container {
-        padding-bottom: 40px;
-        max-width: 95%;
-        /* Same for senior-container */
-    }
+  .senior-container {
+    padding-bottom: 40px;
+  }
 
-    .slide-image {
-        height: 250px;
-        /* Adjust height for smaller screens */
-    }
+  .slide-image {
+    height: 250px;
+  }
 
-    .slide-caption {
-        font-size: 0.9rem;
-        bottom: 10px;
-        left: 10px;
-        padding: 8px 15px;
-    }
+  .slide-caption {
+    font-size: 0.9rem;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 15px;
+  }
 
-    .slick-prev,
-    .slick-next {
-        font-size: 22px;
-        padding: 8px;
-    }
+  .slick-prev,
+  .slick-next {
+    font-size: 16px; /* Further reduce size */
+    padding: 6px; /* Adjust padding */
+  }
+
+  .slick-prev {
+    left: 5px; /* Reduce margin for smaller screens */
+  }
+
+  .slick-next {
+    right: 5px; /* Reduce margin for smaller screens */
+  }
 }
 
-@media (max-width: 600px) {
-    .carousel-container {
-        padding: 10px;
-        max-width: 90%;
-        /* Further reduce width on very small screens */
-    }
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 10px;
+    max-width: 95%;
+  }
 
-    .senior-container {
-        padding-bottom: 30px;
-        max-width: 90%;
-        /* Same for senior-container */
-    }
+  .senior-container {
+    padding-bottom: 30px;
+    max-width: 95%;
+  }
 
-    .slide-image {
-        height: 200px;
-        /* Adjust height further for very small screens */
-    }
+  .slide-image {
+    height: 200px;
+  }
 
-    .slide-caption {
-        font-size: 0.8rem;
-        bottom: 8px;
-        left: 8px;
-        padding: 7px 12px;
-    }
+  .slide-caption {
+    font-size: 0.8rem;
+    bottom: 8px;
+    left: 8px;
+    padding: 7px 12px;
+  }
 
-    .slick-prev,
-    .slick-next {
-        font-size: 20px;
-        padding: 6px;
-    }
+  .slick-prev,
+  .slick-next {
+    font-size: 20px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 8px;
+    max-width: 90%;
+  }
+
+  .senior-container {
+    padding-bottom: 20px;
+    max-width: 90%;
+  }
+
+  .slide-image {
+    height: 150px;
+  }
+
+  .slide-caption {
+    font-size: 0.7rem;
+    bottom: 6px;
+    left: 6px;
+    padding: 6px 10px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    font-size: 18px;
+    padding: 5px;
+  }
 }

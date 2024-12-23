@@ -1,69 +1,93 @@
 .headers {
-    background-color: #34d399;
-    color: white;
-    height: 100px;
+  background-color: #34d399;
+  color: white;
+  height: 100px;
 }
 
 .header1-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10px;
-    margin: 10px;
-    margin-top: -10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: -10px;
 }
 
+.logo-text {
+  font-weight: 700;
+}
 .header1-nav {
-    /* display: none; */
-    display: flex;
-    /* align-items: center; */
-    gap: 20px;
-    text-decoration: none;
-    color: white;
+  /* display: none; */
+  display: flex;
+  /* align-items: center; */
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  margin-right: 15px;
+}
+
+.Home,
+.Map,
+.Review {
+  border-radius: 10px;
+  padding: 7px;
+  font-weight: 600;
+  /* border: 2px solid black; */
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* background-color: black; */
+  scale: 0.85;
+}
+
+.Home:hover,
+.Map:hover,
+.Review:hover {
+  transform: scale(0.95); /* Adds a slight scaling effect */
+  color: #000; /* Slightly darkens the text color for a subtle effect */
+  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow on hover */
 }
 
 .mobile-menu-button {
-    display: none;
+  display: none;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  /* Hide the main navigation by default */
+  .header1-nav {
+    display: none;
+  }
 
-    /* Hide the main navigation by default */
-    .header1-nav {
-        display: none;
-    }
+  /* Add a button for mobile navigation */
+  .header1-container {
+    justify-content: space-between;
+  }
 
-    /* Add a button for mobile navigation */
-    .header1-container {
-        justify-content: space-between;
-    }
+  .mobile-menu-button {
+    display: block;
+    background-color: #fff;
+    color: #34d399;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    .mobile-menu-button {
-        display: block;
-        background-color: #fff;
-        color: #34d399;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+  /* Show the mobile navigation when the button is clicked */
+  .show-menu .header1-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    /* Adjust top position as needed */
+    left: 0;
+    background-color: #34d399;
+    width: 100%;
+    padding: 20px;
+    z-index: 999;
+  }
 
-    /* Show the mobile navigation when the button is clicked */
-    .show-menu .header1-nav {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        /* Adjust top position as needed */
-        left: 0;
-        background-color: #34d399;
-        width: 100%;
-        padding: 20px;
-        z-index: 999;
-    }
-
-    .show-menu .header1-nav a {
-        margin-bottom: 15px;
-    }
+  .show-menu .header1-nav a {
+    margin-bottom: 15px;
+  }
 }

@@ -19,7 +19,10 @@ const Header = () => {
                             alt="DocPulse Logo"
                             className="logo-image"
                         />
-                        <h1 className="logo-text">DocMed</h1>
+                       <h1 className="logo-text">
+                             DocMed
+                        </h1>
+
                     </a>
                     <button className="mobile-menu-button" onClick={toggleMenu}>
                         Menu

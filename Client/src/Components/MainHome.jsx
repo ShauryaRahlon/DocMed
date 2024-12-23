@@ -8,7 +8,6 @@ import Signup from '../Pages/Signup.jsx';
 import Header from './Header.jsx';
 import Carousel from './Carousel.jsx';
 
-
 function MainHome() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,13 +42,13 @@ function MainHome() {
             className={`navbar-items ${menuOpen ? 'show' : 'hide'}`}
           >
 
-            <div>
+            <div className='login_btn'>
               {/* <button className="login-button">Login</Link></button> */}
               <Link to="/login" className="login-button">
                 Login
               </Link>
             </div>
-            <div>
+            <div className='signup-btn'>
               <Link to="/signup" className="login-button">
                 Signup
               </Link>
@@ -74,6 +73,7 @@ function MainHome() {
       </main>
       <Card />
       <Carousel />
+
     </>
   );
 }

@@ -9,6 +9,14 @@
   max-width: 80vw;
   width: 100%;
   margin: auto;
+  background: linear-gradient(
+    135deg,
+    #f3f4f6,
+    #e5e7eb
+  ); /* Subtle gradient for a professional feel */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 section {
@@ -16,55 +24,62 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #f9fafb; /* Light neutral background */
 }
 
+/* Heading */
 h1 {
-  color: #34d399;
+  color: #1f2937; /* Darker text for contrast */
   font-size: 50px;
   line-height: 60px;
   text-align: center;
   margin-bottom: 40px;
 }
 
+/* Cards Container */
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+/* Individual Card */
 .card {
-  color: black;
-  display: flex;
-  gap: 20px;
-  flex: 0 0 calc(50% - 10px);
-  max-width: calc(50% - 10px);
-  width: 100%;
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: 0.3s;
-  border: 2px solid transparent;
-  line-height: 25px;
+  width: 45%; /* Adjust the width to make the cards smaller */
+  margin: 10px auto; /* Add some spacing between cards */
+  padding: 15px; /* Reduce padding inside the card */
+  border-radius: 8px; /* Keep the rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  border-color: #1d39c4;
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Card Title */
 .card-title {
   padding: 0 10px 10px 10px;
   font-size: 20px;
-  font-weight: bolder;
+  font-weight: bold;
+  color: #10b981; /* Matches the main page accent color */
 }
 
+/* Card Content */
 .card-content {
   padding: 10px;
+  color: #4b5563; /* Softer gray text */
 }
-.btn {
+
+/* Button */
+/* .btn {
   border: none;
   outline: none;
   background: #f97316;
+  color: white;
   border-radius: 10px;
   max-width: 100px;
   width: 100%;
@@ -73,15 +88,33 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  transition: 0.2s scale ease-in-out;
+  transition: 0.2s scale ease-in-out, background 0.3s ease-in-out;
   font-weight: bold;
+  text-decoration: none; 
+} */
+
+.btn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 8px 16px; /* Reduce button size */
+  border-radius: 4px;
+  font-size: 0.9rem; /* Smaller button text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+/* .btn:hover {
+  background: #ea580c;
   filter: opacity(90%);
   scale: 1.1;
   cursor: pointer;
+} */
+
+.btn:hover {
+  background-color: #e65500;
 }
+/* Media Queries */
 @media (max-width: 969px) {
   section {
     padding: 20px 0px;
@@ -92,7 +125,7 @@ h1 {
   }
   .card {
     flex: 0 0 calc(50%-20px);
-    max-width: calc(50-20px);
+    max-width: calc(50%-20px);
   }
 }
 

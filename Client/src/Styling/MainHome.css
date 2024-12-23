@@ -1,13 +1,12 @@
 /* Navbar Styles */
 .navbar {
   max-width: 100vw;
-  background-color: #f3f4f6;
+  background-color: #ffffff; /* Clean white background for navbar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   display: flex;
-  justify-content: flex-end; /* Align everything to the right */
+  justify-content: flex-end;
   align-items: center;
-  /* border-radius: 10px; */
 }
 
 .navbar-container {
@@ -46,6 +45,15 @@
   color: #374151;
 }
 
+.login_btn {
+  width: 55px;
+  scale: 0.8;
+}
+
+.signup-btn {
+  scale: 0.8;
+}
+
 .login-button {
   background-color: #f97316;
   color: white;
@@ -63,10 +71,9 @@
 /* Header Styles */
 .header {
   max-width: 100vw;
-  background-color: #10b981;
+  background-color: #0f766e; /* Professional teal for header */
   color: white;
   padding: 20px 10px;
-  /* border-radius: 10px; */
   margin: 0.4px;
 }
 
@@ -120,7 +127,7 @@
 /* Main Section */
 .main {
   height: 400px;
-  background-color: #1f2937;
+  background-color: #e5f9f8; /* Light teal background for a calming effect */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +135,7 @@
 }
 
 .main-title {
-  color: #34d399;
+  color: #0f766e; /* Match header teal for consistency */
   font-size: 28px;
   font-weight: bold;
   text-align: center;
@@ -247,6 +254,11 @@
 }
 
 /*main2 styling*/
+.main2 {
+  background-color: #f8fafc; /* Subtle light gray for contrast */
+  padding: 40px 10px;
+}
+
 .image-container {
   max-width: 100vw;
   margin: 40px;
@@ -255,22 +267,29 @@
   flex-direction: column;
   gap: 10px;
 }
+
 .features-image {
   position: relative;
   margin: auto;
   width: 70vw;
   padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .main2-heading {
   margin-top: 20px;
   padding: 5px;
   text-align: center;
   letter-spacing: 3px;
   font-weight: bold;
+  color: #0f766e; /* Consistent teal */
 }
+
 .main2-question {
   padding: 5px;
   letter-spacing: 3px;
   text-align: center;
   font-weight: bold;
+  color: #334155; /* Darker gray for emphasis */
 }
