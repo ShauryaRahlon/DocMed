@@ -106,34 +106,18 @@ label {
   color: white;
 }
 
-.coolinput {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  position: static;
-  max-width: 240px;
-}
-
-.coolinput label.text {
-  font-size: 0.75rem;
-  color: #818cf8;
-  font-weight: 700;
-  position: relative;
-  top: 0.5rem;
-  margin: 0 0 0 7px;
-  padding: 0 3px;
-  background: #e8e8e8;
-  width: fit-content;
-}
-
-.coolinput input[type="text"].input {
-  padding: 11px 10px;
-  font-size: 0.75rem;
-  border: 2px #818cf8 solid;
-  border-radius: 5px;
-  background: #e8e8e8;
-}
-
-.coolinput input[type="text"].input:focus {
+.input {
+  border: none;
   outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
 }
