@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../Styling/Map.css';
 
 const Map = () => {
   const [userLocation, setUserLocation] = useState({ lat: 0, lng: 0 }); // Default location
@@ -173,8 +174,8 @@ const Map = () => {
     setSearchQuery(event.target.value);
   };
   return (
-    <div>
-      <div style={{ marginBottom: '10px', textAlign: 'center' }}>
+    <div className='map-nav'>
+      <div  style={{ marginBottom: '10px', textAlign: 'center' }}>
         <button
           onClick={() => fetchNearbyPlaces('hospital', 5000)}
           style={{
@@ -190,7 +191,7 @@ const Map = () => {
         >
           Find Nearby Hospitals (5km)
         </button>
-        <button
+        <button 
           onClick={() => fetchNearbyPlaces('hospital', 15000)}
           style={{
             margin: '5px',

@@ -1,0 +1,146 @@
+.map-nav {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.map-nav button {
+  margin: 10px 5px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.map-nav button:hover {
+  background: linear-gradient(45deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-nav #search-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 40px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.map-nav #search-box:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+.map-nav span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.map-nav span:hover {
+  color: #007bff;
+}
+
+#map {
+  height: 60vh;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.map-nav h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.map-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.map-nav li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.map-nav li:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.map-nav li strong {
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .map-nav button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .map-nav #search-box {
+    max-width: 100%;
+    padding: 10px 36px;
+    font-size: 0.9rem;
+  }
+
+  .map-nav span {
+    font-size: 1rem;
+  }
+
+  #map {
+    height: 50vh;
+  }
+
+  .map-nav h3 {
+    font-size: 1.2rem;
+  }
+
+  .map-nav li {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-nav button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .map-nav #search-box {
+    padding: 8px 30px;
+    font-size: 0.8rem;
+  }
+
+  .map-nav h3 {
+    font-size: 1rem;
+  }
+
+  .map-nav li {
+    padding: 6px 10px;
+  }
+}
