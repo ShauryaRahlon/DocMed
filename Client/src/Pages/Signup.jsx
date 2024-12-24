@@ -98,6 +98,7 @@ const Signup = () => {
         {!showOTPInput ? (
           // Signup Form
           <form onSubmit={handleSubmit}>
+            
             <div className='username' style={{ marginBottom: "10px" }}>
               <label htmlFor='email'>Email:</label>
               <input
@@ -108,6 +109,7 @@ const Signup = () => {
                 required
                 placeholder="Enter Email"
                 style={{ width: "100%", padding: "8px", borderRadius: "5px" }}
+                className="input"
               />
             </div>
             <div className='username' style={{ marginBottom: "10px" }}>
@@ -120,6 +122,7 @@ const Signup = () => {
                 required
                 placeholder="Enter Username"
                 style={{ width: "100%", padding: "8px", borderRadius: "5px" }}
+                className="input"
               />
             </div>
             <div className='password' style={{ marginBottom: "10px" }}>
@@ -132,6 +135,7 @@ const Signup = () => {
                 required
                 placeholder="Enter Password"
                 style={{ width: "100%", padding: "8px", borderRadius: "5px" }}
+                className="input"
               />
             </div>
             <button className='submit-btn' type="submit" style={{ padding: "10px 20px" }}>

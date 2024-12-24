@@ -76,16 +76,17 @@ const Login = () => {
               onChange={handleChange}
               required
               placeholder="Enter Email"
-              style={{
-                width: "100%",
-                padding: "12px",
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
-                backgroundColor: "#f9f9f9",
-                transition: "border-color 0.3s, box-shadow 0.3s",
-                outline: "none",
-              }}
+              className="input"
+              // style={{
+              //   width: "100%",
+              //   padding: "12px",
+              //   borderRadius: "8px",
+              //   border: "1px solid #ccc",
+              //   fontSize: "16px",
+              //   backgroundColor: "#f9f9f9",
+              //   transition: "border-color 0.3s, box-shadow 0.3s",
+              //   outline: "none",
+              // }}
               onFocus={(e) => {
                 e.target.style.borderColor = "#007bff";
                 e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";
@@ -105,16 +106,17 @@ const Login = () => {
   onChange={handleChange}
   required
   placeholder="Enter Password"
-  style={{
-    width: "100%",
-    padding: "12px",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
-    fontSize: "16px",
-    backgroundColor: "#f9f9f9",
-    transition: "border-color 0.3s, box-shadow 0.3s",
-    outline: "none",
-  }}
+  className="input"
+  // style={{
+  //   width: "100%",
+  //   padding: "12px",
+  //   borderRadius: "8px",
+  //   border: "1px solid #ccc",
+  //   fontSize: "16px",
+  //   backgroundColor: "#f9f9f9",
+  //   transition: "border-color 0.3s, box-shadow 0.3s",
+  //   outline: "none",
+  // }}
   onFocus={(e) => {
     e.target.style.borderColor = "#007bff";
     e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";
