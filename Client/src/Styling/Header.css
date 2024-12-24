@@ -26,10 +26,9 @@
   margin-right: 15px;
   margin-top: 10px;
   justify-content: flex-end;
-  /* Align navigation links to the right */
 }
 
-.header1-nav a {
+.nav-link {
   text-align: center;
   padding: 7px 15px;
   /* Add padding for consistent spacing */
@@ -38,30 +37,91 @@
   transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   scale: 0.85;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  /* Add pointer cursor for all nav-links */
 }
 
-.Home,
-.Map,
-.Review {
-  padding: 7px;
-}
-
-.nav-link.Login,
-.nav-link.Signup {
-  padding: 7px 10px;
-  /* Adjust padding for smaller buttons */
-}
-
-.Home:hover,
-.Map:hover,
-.Review:hover,
-.nav-link.Login:hover,
-.nav-link.Signup:hover {
+/* Hover effects for all nav-links */
+.nav-link:hover {
   transform: scale(0.95);
   color: #000;
   box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Ensure Logout button matches other nav-links */
+.nav-link.Logout {
+  /* Same styling as other links */
+  background-color: #34d399;
+  border: none;
+}
+
+/* Mobile menu button */
+.mobile-menu-button {
+  display: none;
+}
+
+/* Responsive Styles */
+.headers {
+  background-color: #34d399;
+  color: white;
+  height: 100px;
+}
+
+.header1-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: -10px;
+}
+
+.logo-text {
+  font-weight: 700;
+}
+
+.header1-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  margin-right: 15px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  text-align: center;
+  padding: 7px 15px;
+  /* Add padding for consistent spacing */
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  scale: 0.85;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  /* Add pointer cursor for all nav-links */
+}
+
+/* Hover effects for all nav-links */
+.nav-link:hover {
+  transform: scale(0.95);
+  color: #000;
+  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure Logout button matches other nav-links */
+.nav-link.Logout {
+  background-color: #34d399;
+  border: none;
+}
+
+/* Mobile menu button */
 .mobile-menu-button {
   display: none;
 }
@@ -95,7 +155,6 @@
     flex-direction: column;
     position: absolute;
     top: 100px;
-    /* Adjust top position as needed */
     left: 0;
     background-color: #34d399;
     width: 100%;
@@ -110,5 +169,20 @@
     width: 100%;
     /* Stretch links to fill the width of the mobile menu */
     text-align: left;
+    /* Align text to the left */
+    padding: 10px 15px;
+    /* Ensure uniform padding */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  /* Adjust the Logout button specifically, if needed */
+  .show-menu .header1-nav .nav-link.Logout {
+    margin-bottom: 15px;
+    width: 100%;
+    /* Ensure it aligns with other links */
+    text-align: left;
+    /* Match the text alignment */
+    padding: 10px 15px;
   }
 }
