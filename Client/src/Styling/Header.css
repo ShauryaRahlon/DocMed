@@ -16,35 +16,50 @@
 .logo-text {
   font-weight: 700;
 }
+
 .header1-nav {
-  /* display: none; */
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   gap: 10px;
   text-decoration: none;
   color: white;
   margin-right: 15px;
+  margin-top: 10px;
+  justify-content: flex-end;
+  /* Align navigation links to the right */
+}
+
+.header1-nav a {
+  text-align: center;
+  padding: 7px 15px;
+  /* Add padding for consistent spacing */
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  scale: 0.85;
 }
 
 .Home,
 .Map,
 .Review {
-  border-radius: 10px;
   padding: 7px;
-  font-weight: 600;
-  /* border: 2px solid black; */
-  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* background-color: black; */
-  scale: 0.85;
+}
+
+.nav-link.Login,
+.nav-link.Signup {
+  padding: 7px 10px;
+  /* Adjust padding for smaller buttons */
 }
 
 .Home:hover,
 .Map:hover,
-.Review:hover {
-  transform: scale(0.95); /* Adds a slight scaling effect */
-  color: #000; /* Slightly darkens the text color for a subtle effect */
-  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow on hover */
+.Review:hover,
+.nav-link.Login:hover,
+.nav-link.Signup:hover {
+  transform: scale(0.95);
+  color: #000;
+  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu-button {
@@ -53,6 +68,7 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
   /* Hide the main navigation by default */
   .header1-nav {
     display: none;
@@ -85,9 +101,14 @@
     width: 100%;
     padding: 20px;
     z-index: 999;
+    align-items: flex-start;
+    /* Align links to the left in the mobile view */
   }
 
   .show-menu .header1-nav a {
     margin-bottom: 15px;
+    width: 100%;
+    /* Stretch links to fill the width of the mobile menu */
+    text-align: left;
   }
 }

@@ -110,29 +110,30 @@
 } */
 
 .ai-nav-item {
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
+  background: none;
   border-radius: 50px;
-  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-  color: #4d4d4d;
+  /* box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff; */
+  /* color: #4d4d4d; */
   cursor: pointer;
   font-size: 18px;
   padding: 5px 10px;
   transition: all 0.2s ease-in-out;
-  border: 2px solid rgb(206, 206, 206);
+  /* border: 2px solid rgb(206, 206, 206); */
   text-align: center;
   margin: 20px;
   padding: 10px;
 }
 
 .ai-nav-item img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: none;
 }
 
 .ai-nav-item:hover {
-  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff,
-    2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
 }
 
 .ai-nav-item:focus {

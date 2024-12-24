@@ -63,7 +63,7 @@ function Review() {
     return (
         <>
             <div className='ai-container'>
-                <button className='ai-nav-item'><Link to='/'><img src="/public/Logo-icon.webp" alt="a" /></Link></button>
+                <button className='ai-nav-item'><Link to='/'><img src="/public/Logo3.png" alt="a" /></Link></button>
                 <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
                     <style>
                         {`
