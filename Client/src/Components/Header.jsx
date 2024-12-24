@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../Styling/Header.css';
 
 const Header = () => {
@@ -18,11 +20,23 @@ const Header = () => {
     }, []);
 
     const handleLogout = () => {
-        // Clear the token and update state
-        localStorage.removeItem('authToken');
-        window.location.reload();
-        setIsLoggedIn(false);
-        // Refresh the entire page after a short delay
+        // Show a success toast
+        toast.success("Logged Out", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
+        // Delay logout actions slightly to allow the toast to display
+        setTimeout(() => {
+            localStorage.removeItem('authToken');
+            setIsLoggedIn(false);
+            navigate('/'); // Redirect to the homepage or another route
+        }, 3000);
     };
 
     const toggleMenu = () => {
@@ -73,6 +87,7 @@ const Header = () => {
                     </nav>
                 </div>
             </header>
+            <ToastContainer />
         </div>
     );
 };

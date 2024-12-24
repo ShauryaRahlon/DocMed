@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import '../Styling/Signup.css';
-
+import { Link } from "react-router-dom";
 const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -89,8 +89,12 @@ const Signup = () => {
     <div className="main-container">
       <div className='login-container'>
         <div style={{ display: "flex", gap: "15px", justifyItems: "center", alignItems: "center", margin: "10px 0 20px 10px" }}>
-          <img src="/public/Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
-          <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>
+          <Link to='/'>
+            <img src="/public/Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
+          </Link>
+          <Link to='/'>
+            <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>
+          </Link>
         </div>
 
         <h2 className="login-heading">Signup</h2>
@@ -98,7 +102,7 @@ const Signup = () => {
         {!showOTPInput ? (
           // Signup Form
           <form onSubmit={handleSubmit}>
-            
+
             <div className='username' style={{ marginBottom: "10px" }}>
               <label htmlFor='email'>Email:</label>
               <input
