@@ -73,14 +73,14 @@ git clone https://github.com/ShauryaRahlon/DocMed.git
 
 ```bash
 cd client
-npm init -y
+npm install
 ```
 
 3. Install backend dependencies:
 
 ```bash
 cd ../server
-npm install
+npm init -y
 ```
 
 4. Create a .env file in the server directory with your configuration:
