@@ -34,7 +34,7 @@ const Login = () => {
       const receivedToken = response.data.token;
       console.log(receivedToken);
       setToken(receivedToken);
-      localStorage.setItem('authToken',receivedToken);
+      localStorage.setItem('authToken', receivedToken);
 
       if (response.status === 201) {
         console.log("Navigating to home page");
@@ -50,7 +50,7 @@ const Login = () => {
       if (error.response) {
         setMessage(
           "Error: " +
-            (error.response.data.message || "Login failed. Try again.")
+          (error.response.data.message || "Login failed. Try again.")
         );
       } else if (error.request) {
         setMessage("No response from server. Please try again later.");
@@ -63,9 +63,9 @@ const Login = () => {
   return (
     <div className="main-container">
       <div className='login-container'>
-        <div style={{display:"flex", gap:"15px", justifyItems:"center", alignItems:"center", margin:"10px 0 20px 10px"}}>
-          <img src="/public/Logo2.webp" alt="DocMed icon" style={{width:"60px", height: "60px", borderRadius:"50px"}} />
-          <h2 style={{fontSize:"30px", color:"white"}}>DocMed</h2>
+        <div style={{ display: "flex", gap: "15px", justifyItems: "center", alignItems: "center", margin: "10px 0 20px 10px" }}>
+          <img src="/public/Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
+          <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>
         </div>
         <h2 className="login-heading">Login</h2>
         <form onSubmit={handleSubmit}>

@@ -30,11 +30,11 @@ const Connect = () => {
     return (
         <div className='connect-container'>
             <div className='icon-container'>
-              <Link to='/'><img src="/public/Logo2.webp" alt="Logo icon" /></Link>
+                <Link to='/'><img src="/public/Logo3.png" alt="Logo icon" /></Link>
             </div>
             <div>
-            <div className='actual-container'>
-                {/*<div className='email-container'>
+                <div className='actual-container'>
+                    {/*<div className='email-container'>
                     <label htmlFor="email">Email: </label>
                     <input className='connect-email' value={emailId} onChange={e => setemailId(e.target.value)} type='email' placeholder='emailId'></input>
                 </div>
@@ -46,15 +46,15 @@ const Connect = () => {
                 </div>
             </div> */}
 
-                <form className="form">
-                    <div className="title">Welcome!</div>
-                    <input type="email" placeholder="Email" name="email" className="input" value={emailId} onChange={e => setemailId(e.target.value)} />
-                    <input type="text" placeholder="Room Code" name="password" className="input" value={roomId} onChange={e => setRoomId(e.target.value)} />
-                    <button className="button-confirm" onClick={handleJoinRoom}>Join →</button>
-                </form>
+                    <form className="form">
+                        <div className="title">Welcome!</div>
+                        <input type="email" placeholder="Email" name="email" className="input" value={emailId} onChange={e => setemailId(e.target.value)} />
+                        <input type="text" placeholder="Room Code" name="password" className="input" value={roomId} onChange={e => setRoomId(e.target.value)} />
+                        <button className="button-confirm" onClick={handleJoinRoom}>Join →</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
     )
 }
 

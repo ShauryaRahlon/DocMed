@@ -9,7 +9,7 @@ const Signup = () => {
     userName: "",
     password: "",
   });
-  
+
   const [showOTPInput, setShowOTPInput] = useState(false);
   const [otp, setOTP] = useState("");
   const [message, setMessage] = useState("");
@@ -32,7 +32,7 @@ const Signup = () => {
         "http://localhost:5000/api/auth/signup",
         formData
       );
-      
+
       if (response.status === 201) {
         setMessage("Please Verify OTP");
         setShowOTPInput(true);
@@ -43,7 +43,7 @@ const Signup = () => {
       if (error.response) {
         setMessage(
           "Error: " +
-            (error.response.data.error || "Signup failed. Try again.")
+          (error.response.data.error || "Signup failed. Try again.")
         );
       } else if (error.request) {
         setMessage("No response from server. Please try again later.");
@@ -75,7 +75,7 @@ const Signup = () => {
       if (error.response) {
         setMessage(
           "Error: " +
-            (error.response.data.error || "OTP verification failed. Try again.")
+          (error.response.data.error || "OTP verification failed. Try again.")
         );
       } else if (error.request) {
         setMessage("No response from server. Please try again later.");
@@ -88,13 +88,13 @@ const Signup = () => {
   return (
     <div className="main-container">
       <div className='login-container'>
-        <div style={{display:"flex", gap:"15px", justifyItems:"center", alignItems:"center", margin:"10px 0 20px 10px"}}>
-          <img src="/public/Logo2.webp" alt="DocMed icon" style={{width:"60px", height: "60px", borderRadius:"50px"}} />
-          <h2 style={{fontSize:"30px", color:"white"}}>DocMed</h2>
+        <div style={{ display: "flex", gap: "15px", justifyItems: "center", alignItems: "center", margin: "10px 0 20px 10px" }}>
+          <img src="/public/Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
+          <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>
         </div>
-        
+
         <h2 className="login-heading">Signup</h2>
-        
+
         {!showOTPInput ? (
           // Signup Form
           <form onSubmit={handleSubmit}>
@@ -158,11 +158,11 @@ const Signup = () => {
             </button>
           </form>
         )}
-        
+
         {message && (
-          <p style={{ 
-            marginTop: "10px", 
-            padding: "10px", 
+          <p style={{
+            marginTop: "10px",
+            padding: "10px",
             backgroundColor: message.includes("Error") ? "#ffebee" : "#e8f5e9",
             color: message.includes("Error") ? "#c62828" : "#2e7d32",
             borderRadius: "5px"
