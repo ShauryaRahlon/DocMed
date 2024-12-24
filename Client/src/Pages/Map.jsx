@@ -50,26 +50,26 @@ const Map = () => {
         },
       });
       setMap(newMap);
-       // Initialize DirectionsService and DirectionsRenderer
-       const directionsServiceInstance = new google.maps.DirectionsService();
-       const directionsRendererInstance = new google.maps.DirectionsRenderer();
-       directionsRendererInstance.setMap(newMap);
-       setDirectionsService(directionsServiceInstance);
-       setDirectionsRenderer(directionsRendererInstance);
-       
-       // Initialize Autocomplete
-       const input = document.getElementById('search-box');
-       const autocompleteInstance = new google.maps.places.Autocomplete(input);
-       autocompleteInstance.setFields(['place_id', 'geometry', 'name']);
-       autocompleteInstance.addListener('place_changed', () => {
-         const place = autocompleteInstance.getPlace();
-         if (place.geometry) {
-           setDestination(place.geometry.location);
-           setSearchQuery(autocompleteInstance.getPlace().name); 
-           
-         }
-       });
-       setAutocomplete(autocompleteInstance);
+      // Initialize DirectionsService and DirectionsRenderer
+      const directionsServiceInstance = new google.maps.DirectionsService();
+      const directionsRendererInstance = new google.maps.DirectionsRenderer();
+      directionsRendererInstance.setMap(newMap);
+      setDirectionsService(directionsServiceInstance);
+      setDirectionsRenderer(directionsRendererInstance);
+
+      // Initialize Autocomplete
+      const input = document.getElementById('search-box');
+      const autocompleteInstance = new google.maps.places.Autocomplete(input);
+      autocompleteInstance.setFields(['place_id', 'geometry', 'name']);
+      autocompleteInstance.addListener('place_changed', () => {
+        const place = autocompleteInstance.getPlace();
+        if (place.geometry) {
+          setDestination(place.geometry.location);
+          setSearchQuery(autocompleteInstance.getPlace().name);
+
+        }
+      });
+      setAutocomplete(autocompleteInstance);
     };
 
     const script = document.createElement('script');
@@ -96,42 +96,42 @@ const Map = () => {
           setPlaces(data.results);
           if (map) {
             const markers = [];
-        const infoWindows = [];
+            const infoWindows = [];
             // Add markers to the map
             data.results.forEach((place) => {
-             const marker= new google.maps.Marker({
+              const marker = new google.maps.Marker({
                 position: place.geometry.location,
                 map: map,
                 title: place.name,
                 icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-               
-                
-                
+
+
+
                 //  // Blue icon for places
               });
-                // Create an info window for the place
-          const infoWindow = new google.maps.InfoWindow({
-            content: `<h3>${place.name}</h3><p>${place.vicinity}</p>`, // Display name and vicinity
-          });
+              // Create an info window for the place
+              const infoWindow = new google.maps.InfoWindow({
+                content: `<h3>${place.name}</h3><p>${place.vicinity}</p>`, // Display name and vicinity
+              });
 
-          // Show the info window when the user hovers over the marker
-          marker.addListener('mouseover', () => {
-            infoWindow.open(map, marker);
-          });
+              // Show the info window when the user hovers over the marker
+              marker.addListener('mouseover', () => {
+                infoWindow.open(map, marker);
+              });
 
-          // Close the info window when the mouse leaves the marker
-          marker.addListener('mouseout', () => {
-            infoWindow.close();
-          });
+              // Close the info window when the mouse leaves the marker
+              marker.addListener('mouseout', () => {
+                infoWindow.close();
+              });
 
-          // Add click listener to open the URL for the place
-          marker.addListener('click', () => {
-            window.location.href = `http://localhost:5173/doctorslisting`;
-          });
+              // Add click listener to open the URL for the place
+              marker.addListener('click', () => {
+                window.location.href = `http://localhost:5173/doctorlisting`;
+              });
 
-          // Store the marker and infoWindow to manage them later (if needed)
-          markers.push(marker);
-          infoWindows.push(infoWindow);
+              // Store the marker and infoWindow to manage them later (if needed)
+              markers.push(marker);
+              infoWindows.push(infoWindow);
 
               // Add info window for each marker
             });
@@ -175,7 +175,7 @@ const Map = () => {
   };
   return (
     <div className='map-nav'>
-      <div  style={{ marginBottom: '10px', textAlign: 'center' }}>
+      <div style={{ marginBottom: '10px', textAlign: 'center' }}>
         <button
           onClick={() => fetchNearbyPlaces('hospital', 5000)}
           style={{
@@ -191,7 +191,7 @@ const Map = () => {
         >
           Find Nearby Hospitals (5km)
         </button>
-        <button 
+        <button
           onClick={() => fetchNearbyPlaces('hospital', 15000)}
           style={{
             margin: '5px',
