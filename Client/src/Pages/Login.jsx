@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import '../Styling/Login.css';
 
 const Login = () => {
@@ -8,7 +10,6 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const [message, setMessage] = useState("");
   const [receivedToken, setToken] = useState("");
 
   const navigate = useNavigate();
@@ -37,25 +38,22 @@ const Login = () => {
       localStorage.setItem('authToken', receivedToken);
 
       if (response.status === 201) {
+        toast.success("Login successful!");
         console.log("Navigating to home page");
-        setMessage("Login successful!");
         navigate("/");
       } else {
-        setMessage(
-          "Error: " + (response.data.message || "Login failed. Try again.")
-        );
+        toast.error(response.data.message || "Login failed. Try again.");
       }
     } catch (error) {
       console.error("Login Error:", error);
       if (error.response) {
-        setMessage(
-          "Error: " +
-          (error.response.data.message || "Login failed. Try again.")
+        toast.error(
+          error.response.data.message || "Login failed. Try again."
         );
       } else if (error.request) {
-        setMessage("No response from server. Please try again later.");
+        toast.error("No response from server. Please try again later.");
       } else {
-        setMessage("An error occurred. Please check your connection.");
+        toast.error("An error occurred. Please check your connection.");
       }
     }
   };
@@ -78,26 +76,60 @@ const Login = () => {
               onChange={handleChange}
               required
               placeholder="Enter Email"
-              style={{ width: "100%", padding: "8px", borderRadius: "5px" }}
+              style={{
+                width: "100%",
+                padding: "12px",
+                borderRadius: "8px",
+                border: "1px solid #ccc",
+                fontSize: "16px",
+                backgroundColor: "#f9f9f9",
+                transition: "border-color 0.3s, box-shadow 0.3s",
+                outline: "none",
+              }}
+              onFocus={(e) => {
+                e.target.style.borderColor = "#007bff";
+                e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = "#ccc";
+                e.target.style.boxShadow = "none";
+              }}
             />
           </div>
           <div className='password' style={{ marginBottom: "10px" }}>
             <label htmlFor='password'>Password:</label>
             <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              placeholder="Enter Password"
-              style={{ width: "100%", padding: "8px", borderRadius: "5px" }}
-            />
+  type="password"
+  name="password"
+  value={formData.password}
+  onChange={handleChange}
+  required
+  placeholder="Enter Password"
+  style={{
+    width: "100%",
+    padding: "12px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+    backgroundColor: "#f9f9f9",
+    transition: "border-color 0.3s, box-shadow 0.3s",
+    outline: "none",
+  }}
+  onFocus={(e) => {
+    e.target.style.borderColor = "#007bff";
+    e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";
+  }}
+  onBlur={(e) => {
+    e.target.style.borderColor = "#ccc";
+    e.target.style.boxShadow = "none";
+  }}
+/>
+
           </div>
           <button className='submit-btn' type="submit" style={{ padding: "10px 20px" }}>
             Submit
           </button>
         </form>
-        {message && <p>{message}</p>}
       </div>
     </div>
   );

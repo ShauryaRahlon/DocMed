@@ -20,8 +20,9 @@ const Header = () => {
     const handleLogout = () => {
         // Clear the token and update state
         localStorage.removeItem('authToken');
+        window.location.reload();
         setIsLoggedIn(false);
-        navigate('/');
+        // Refresh the entire page after a short delay
     };
 
     const toggleMenu = () => {

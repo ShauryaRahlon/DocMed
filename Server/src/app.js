@@ -5,6 +5,7 @@ import connectDB from "./Utils/dbConnection.js";
 import cors from 'cors'
 import { Server } from 'socket.io'
 import cookieParser from 'cookie-parser'
+import fileUpload from "express-fileupload";
 
 dotenv.config();
 
@@ -28,6 +29,9 @@ app.use(express.json());
 
 // Middleware to parse cookies
 app.use(cookieParser());
+
+// Middleware to enable fileUpload
+app.use(fileUpload());
 
 //Setting up socket
 

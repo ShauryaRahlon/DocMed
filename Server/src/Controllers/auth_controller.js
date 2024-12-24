@@ -4,8 +4,14 @@ import bcrypt from 'bcryptjs'; //Used to encrypt the password in the database
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
 
+import fileUpload from 'express-fileupload';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
 // Load environment variables
 dotenv.config();
+
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+
 
 // Generating a random OTP
 function generateOTP() {
@@ -102,7 +108,7 @@ export const verifyOTP = async (req, res) => {
         }
 
         const user = await User.findOne({ email });
-        
+
         if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
@@ -133,7 +139,7 @@ export const verifyOTP = async (req, res) => {
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
-    
+
 
     // Validate email and password
     if (!email || !password) {
@@ -152,4 +158,31 @@ export const login = async (req, res) => {
         return res.status(401).json({ message: 'Invalid email or password.' });
     }
 };
-      
+
+export const aiHandle = async (req, res) => {
+    console.log("Hello from ai Handle")
+    if (!req.files || !req.files.image) {
+        return res.status(400).send('No file uploaded.');
+    }
+
+    const image = req.files.image;
+    const imageBuffer = image.data;
+
+    try {
+        const model = genAI.getGenerativeModel({ model: 'models/gemini-1.5-pro' });
+
+        const result = await model.generateContent([
+            {
+                inlineData: {
+                    data: imageBuffer.toString('base64'),
+                    mimeType: image.mimetype,
+                },
+            },
+            'Medically analyze this image. If unrelated to the medical field, respond with Invalid image.Also provide the response in a format which separates all the elements in the report. Suggest precautions in form of pointers based on the diagnosis if applicable.',
+        ]);
+        res.json({ caption: result.response.text() });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error generating caption.');
+    }
+};
