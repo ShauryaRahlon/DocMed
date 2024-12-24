@@ -45,7 +45,7 @@ function Review() {
         setLoading(true);
         setError('');
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/caption', formData, {
+            const response = await axios.post('https://docmed-server.onrender.com/api/auth/caption', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             setTimeout(() => {
@@ -63,7 +63,7 @@ function Review() {
     return (
         <>
             <div className='ai-container'>
-                <button className='ai-nav-item'><Link to='/'><img src="/public/Logo3.png" alt="a" /></Link></button>
+                <button className='ai-nav-item'><Link to='/'><img src="./Logo3.png" alt="a" /></Link></button>
                 <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
                     <style>
                         {`

@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../Styling/Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +22,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://docmed-server.onrender.com/api/auth/login",
         formData
       );
 
@@ -78,15 +77,20 @@ const Login = () => {
           }}
         >
           <img
-            src="/public/Logo3.png"
+            src="./Logo3.png"
             alt="DocMed icon"
             style={{ width: "60px", height: "60px", borderRadius: "50px" }}
           />
           <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>
         </div>
-        <h2 className="login-heading">Login</h2>
+        <h2 className="login-heading" style={{textAlign: "center"}}>Login</h2>
         <form onSubmit={handleSubmit}>
-          <div className="email" style={{ marginBottom: "10px" }}>
+          <div className="email" style={{ 
+            marginBottom: "20px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px"
+          }}>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -96,6 +100,13 @@ const Login = () => {
               required
               placeholder="Enter Email"
               className="input"
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "16px"
+              }}
               onFocus={(e) => {
                 e.target.style.borderColor = "#007bff";
                 e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";
@@ -106,7 +117,12 @@ const Login = () => {
               }}
             />
           </div>
-          <div className="password" style={{ marginBottom: "10px" }}>
+          <div className="password" style={{ 
+            marginBottom: "20px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px"
+          }}>
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -116,6 +132,13 @@ const Login = () => {
               required
               placeholder="Enter Password"
               className="input"
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "5px",
+                border: "1px solid #ccc",
+                fontSize: "16px"
+              }}
               onFocus={(e) => {
                 e.target.style.borderColor = "#007bff";
                 e.target.style.boxShadow = "0 0 5px rgba(0, 123, 255, 0.5)";

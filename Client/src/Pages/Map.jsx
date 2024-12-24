@@ -126,7 +126,7 @@ const Map = () => {
 
               // Add click listener to open the URL for the place
               marker.addListener('click', () => {
-                window.location.href = `http://localhost:5173/doctorlisting`;
+                window.location.href = `https://docmed-msmy.onrender.com/doctorlisting`;
               });
 
               // Store the marker and infoWindow to manage them later (if needed)

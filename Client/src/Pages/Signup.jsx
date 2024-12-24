@@ -29,7 +29,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://docmed-server.onrender.com/api/auth/signup",
         formData
       );
 
@@ -57,7 +57,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/verifyOTP",
+        "https://docmed-server.onrender.com/api/auth/verifyOTP",
         {
           email: userEmail,
           otp: otp
@@ -90,7 +90,7 @@ const Signup = () => {
       <div className='login-container'>
         <div style={{ display: "flex", gap: "15px", justifyItems: "center", alignItems: "center", margin: "10px 0 20px 10px" }}>
           <Link to='/'>
-            <img src="/public/Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
+            <img src="./Logo3.png" alt="DocMed icon" style={{ width: "60px", height: "60px", borderRadius: "50px" }} />
           </Link>
           <Link to='/'>
             <h2 style={{ fontSize: "30px", color: "white" }}>DocMed</h2>

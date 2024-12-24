@@ -28,7 +28,7 @@ function MainHome() {
         <div className='image-container'>
           <h2 className='main2-heading'>Doctor Appointment Booking App for Patients</h2>
           <h3 className='main2-question'>What you can Do?</h3>
-          <img className='features-image' src="/public/Meet Doctor (1).png" alt="Features Image" />
+          <img className='features-image' src="./Meet Doctor (1).png" alt="Features Image" />
         </div>
       </main>
       <Card />
