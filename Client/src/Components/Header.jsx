@@ -34,7 +34,7 @@ const Header = () => {
                 <div className="header1-container">
                     <a href="/" className="logo">
                         <img
-                            src="/public/Logo-icon.webp"
+                            src="/public/Logo3.png"
                             alt="DocPulse Logo"
                             className="logo-image"
                         />
