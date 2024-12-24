@@ -1,61 +1,144 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useSocket } from '../Providers/Socket';
-import '../Styling/Connect.css';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { io } from "socket.io-client";
 
-const Connect = () => {
-    const { socket } = useSocket();
-    const navigate = useNavigate();
+const socket = io("http://localhost:5000");
 
-    const [emailId, setemailId] = useState();
-    const [roomId, setRoomId] = useState();
+function App() {
+  const localVideoRef = useRef(null);
+  const remoteVideoRef = useRef(null);
+  const [localStream, setLocalStream] = useState(null);
+  const [peerConnection, setPeerConnection] = useState(null);
+  const [roomId, setRoomId] = useState("");
+  const [emailId, setEmailId] = useState("");
+  const [remoteEmailId, setRemoteEmailId] = useState("");
 
-    const handleRoomJoined = useCallback(({ roomId }) => {
-        navigate(`/connected/${roomId}`);
-    }, [navigate]);
+  useEffect(() => {
+    // Event: Joined Room
+    socket.on("joined-room", ({ roomId }) => {
+      console.log("Joined room:", roomId);
+    });
 
-    useEffect(() => {
-        socket.on('joined-room', handleRoomJoined);
+    // Event: Incoming Call
+    socket.on("incoming-call", async ({ from, offer }) => {
+      console.log("Incoming call from:", from);
+      const pc = createPeerConnection(from);
+      await pc.setRemoteDescription(new RTCSessionDescription(offer));
+      const answer = await pc.createAnswer();
+      await pc.setLocalDescription(answer);
+      socket.emit("call-accepted", { emailId: from, answer });
+    });
 
-        return () => {
-            socket.off('joined-room', handleRoomJoined);
-        }
-    }, [socket, handleRoomJoined]);
+    // Event: Call Accepted
+    socket.on("call-accepted", async ({ answer }) => {
+      if (peerConnection) {
+        await peerConnection.setRemoteDescription(
+          new RTCSessionDescription(answer)
+        );
+      }
+    });
 
-    const handleJoinRoom = () => {
-        socket.emit('join-room', { emailId: emailId, roomId: roomId });
+    // Event: ICE Candidate
+    socket.on("ice-candidate", ({ candidate }) => {
+      if (peerConnection) {
+        peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+      }
+    });
+
+    // Cleanup on component unmount
+    return () => {
+      socket.off("joined-room");
+      socket.off("incoming-call");
+      socket.off("call-accepted");
+      socket.off("ice-candidate");
+    };
+  }, [peerConnection]);
+
+  const createPeerConnection = (remoteEmailId) => {
+    const pc = new RTCPeerConnection();
+    pc.onicecandidate = (event) => {
+      if (event.candidate) {
+        socket.emit("ice-candidate", {
+          emailId: remoteEmailId,
+          candidate: event.candidate,
+        });
+      }
+    };
+
+    pc.ontrack = (event) => {
+      remoteVideoRef.current.srcObject = event.streams[0];
+    };
+
+    if (localStream) {
+      localStream.getTracks().forEach((track) => {
+        pc.addTrack(track, localStream);
+      });
     }
 
-    return (
-        <div className='connect-container'>
-            <div className='icon-container'>
-                <Link to='/'><img src="/public/Logo3.png" alt="Logo icon" /></Link>
-            </div>
-            <div>
-                <div className='actual-container'>
-                    {/*<div className='email-container'>
-                    <label htmlFor="email">Email: </label>
-                    <input className='connect-email' value={emailId} onChange={e => setemailId(e.target.value)} type='email' placeholder='emailId'></input>
-                </div>
-                <div className='room-container'>
-                    <input className='room-code' value={roomId} onChange={e => setRoomId(e.target.value)} type='text' placeholder='Enter Room code'></input>
-                </div>
-                <div btn-container>
-                    <button className='join-btn' onClick={handleJoinRoom}>Join</button>
-                </div>
-            </div> */}
+    setPeerConnection(pc);
+    return pc;
+  };
 
-                    <form className="form">
-                        <div className="title">Welcome!</div>
-                        <input type="email" placeholder="Email" name="email" className="input" value={emailId} onChange={e => setemailId(e.target.value)} />
-                        <input type="text" placeholder="Room Code" name="password" className="input" value={roomId} onChange={e => setRoomId(e.target.value)} />
-                        <button className="button-confirm" onClick={handleJoinRoom}>Join →</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    )
+  const handleJoinRoom = () => {
+    if (!emailId || !roomId) {
+      alert("Please enter email and room ID");
+      return;
+    }
+    socket.emit("join-room", { emailId, roomId });
+  };
+
+  const startCall = async () => {
+    if (!remoteEmailId) {
+      alert("Please enter the email of the person you want to call");
+      return;
+    }
+    const pc = createPeerConnection(remoteEmailId);
+    const offer = await pc.createOffer();
+    await pc.setLocalDescription(offer);
+    socket.emit("call-user", { emailId: remoteEmailId, offer });
+  };
+
+  useEffect(() => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: true })
+      .then((stream) => {
+        localVideoRef.current.srcObject = stream;
+        setLocalStream(stream);
+      })
+      .catch((err) => console.error("Error accessing media devices:", err));
+  }, []);
+
+  return (
+    <div>
+      <div>
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={emailId}
+          onChange={(e) => setEmailId(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Room ID"
+          value={roomId}
+          onChange={(e) => setRoomId(e.target.value)}
+        />
+        <button onClick={handleJoinRoom}>Join Room</button>
+      </div>
+      <div>
+        <input
+          type="email"
+          placeholder="Email to Call"
+          value={remoteEmailId}
+          onChange={(e) => setRemoteEmailId(e.target.value)}
+        />
+        <button onClick={startCall}>Start Call</button>
+      </div>
+      <div>
+        <video ref={localVideoRef} autoPlay muted style={{ width: "45%" }} />
+        <video ref={remoteVideoRef} autoPlay style={{ width: "45%" }} />
+      </div>
+    </div>
+  );
 }
 
-export default Connect
+export default App;
